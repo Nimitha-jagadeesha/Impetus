@@ -1,3 +1,6 @@
+<?php ?>
+<!--HTML boiler plate-->
+
 <!DOCTYPE html>
 
 
@@ -11,8 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <!--font awesome-->
   <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <!--bootstrap js-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -20,7 +22,7 @@
   <!--google font poppins-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="snakeGame/main.css">
   <style>
     #Div2 {
       display: none;
@@ -57,17 +59,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav">
-          <a href="/" class="nav-item nav-link active">Home</a>
+          <a href="./index.php" class="nav-item nav-link active">Home</a>
           <a href="#" class="nav-item nav-link">Epsilon</a>
-          <a href="gallery" class="nav-item nav-link">Gallery</a>
-          <a href="events" class="nav-item nav-link">Events</a>
-          <a href="covid" class="nav-item nav-link">Covid Awarness</a>
+          <a href="./gallery.php" class="nav-item nav-link">Gallery</a>
+          <a href="./events.php" class="nav-item nav-link">Events</a>
+          <a href="./covid_awarness.php" class="nav-item nav-link">Covid Awarness</a>
 
         </div>
       </div>
     </nav>
-    <input id="Button1" type="button" value="Play Game" onclick="switchVisible();"
-      class="btn btn-light res-pad res-mar rounded-pill" style="background-color: white; margin:auto; display:block" />
+    <input id="Button1" type="button" value="Play Game" onclick="switchVisible();"  class="btn btn-light res-pad res-mar rounded-pill" style="background-color: white; margin:auto; display:block"/>
 
     <div class="text-center">
       <div class="row m-0">
@@ -101,15 +102,12 @@
           <h1 class="responsive-lg mt-2 text-center" style="color: black;
                      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;">IMPETUS 21.0
           </h1>
-          <p class="responsive-tx font-wight-bold text-center mb-5 animate__animated animate__fadeIn animate__delay-40s"
-            style="color:white;">Retro Rewind: The Past That Never Was</p>
-          <button type="button" class="btn btn-light res-pad res-mar rounded-pill"
-            style="background-color: white;">Register</button>
-          <button type="button" class="btn btn-light res-pad res-mar rounded-pill"
-            style="background-color: white;">Schedule</button>
+          <p class="responsive-tx font-wight-bold text-center mb-5 animate__animated animate__fadeIn animate__delay-40s" style="color:white;">Retro Rewind: The Past That Never Was</p>
+          <button type="button" class="btn btn-light res-pad res-mar rounded-pill" style="background-color: white;">Register</button>
+          <button type="button" class="btn btn-light res-pad res-mar rounded-pill" style="background-color: white;">Schedule</button>
 
           <p id="demo" class="font-weight-bold mt-4 responsive-tx" style="color:white;"></p>
-
+       
         </div>
 
       </div>
@@ -134,31 +132,31 @@
       back that feeling of nostalgia with retro technology. We aim towards bringing out nostalgic and old school
       technology, which would enable the masses to disconnect from the present network without losing access of things
       we want. IEEE UVCE presents you IMPETUS 21.0, Retro Rewind: The Past That Never Was
-
-    <p class="text-center"><a href="https://www.youtube.com/watch?v=1Eg2gHnAGw8&t=2s"><button type="button"
-          class="btn btn-dark res-pad res-mar rounded-pill" style="background-color: black;">Impetus 20.0</button></a>
+  
+      <p class="text-center"><a href="https://www.youtube.com/watch?v=1Eg2gHnAGw8&t=2s"><button type="button" class="btn btn-dark res-pad res-mar rounded-pill" style="background-color: black;">Impetus 20.0</button></a></p>
     </p>
-    </p>
-
-
-    <!--Events-->
+    
+  
+  <!--Events-->
     <h1 class="responsive-md text-center mt-2 pt-5" style="color: #000;
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">FLAGSHIP EVENTS</h1>
-
+    
     <div class="row m-4">
-      <% for(var i=0; i < 6; i++) { %>
-        <div class="col-12 col-sm-6 res-pad-flag container">
-          <img src="test.jpg" alt="test" class="res-img">
-          <div class="overlay">
+    <?php for($i=0;$i<6;$i++)  { ?>
+     
+      <div class="col-12 col-sm-6 res-pad-flag container">
+        <img src="test.jpg" alt="test" class="res-img">
+        <div class="overlay">
             <h1 class="text responsive-md font-wight-bold" style="color:white;">FLAGSHIP EVENT</h1>
           </div>
-        </div>
-     <% } %>
+      </div>
+    
+    <?php } ?>
     </div>
+    
+    
 
-
-
-    <!--Sponsors-->
+  <!--Sponsors-->
     <h1 class="responsive-md text-center mt-2" style="color: #000;
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">SPONSORS</h1>
     <div class="row m-0">
@@ -194,8 +192,7 @@
       <form>
         <div class="form-group">
           <label for="exampleInputEmail1" style="color:white;">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter email">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
           <small id="emailHelp" class="form-text text-muted" style="color:white;">We'll never share your email with
             anyone else.</small>
         </div>
@@ -222,7 +219,7 @@
     var countDownDate = new Date("June 5, 2021 12:00:00").getTime();
 
     // Update the count down every 1 second
-    var x = setInterval(function () {
+    var x = setInterval(function() {
 
       // Get today's date and time
       var now = new Date().getTime();
@@ -247,17 +244,17 @@
       }
     }, 1000);
   </script>
-  <script src="game.js"></script>
+  <script src="snakeGame/jscript.js"></script>
   <style>
     /*Media Queries*/
     @media (min-width:320px) {
       .res-img {
-
-        width: 100%;
-        height: auto;
-
+       
+        width:100%;
+        height:auto;
+        
       }
-
+      
       .res-game {
         padding-left: 8vw;
         padding-right: 8vw;
@@ -292,12 +289,12 @@
 
     @media (min-width:481px) {
       .res-img {
-
-        width: 100%;
-        height: auto;
-
+       
+        width:100%;
+        height:auto;
+        
       }
-
+      
       .res-game {
         padding-left: 10vw;
         padding-right: 10vw;
@@ -329,27 +326,25 @@
 
       /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     }
-
-    @media (max-width:768px) {
-
-      #wasd {
+    @media (max-width:768px){
+      
+      #wasd{
         display: none;
       }
     }
-
     @media (min-width:768px) {
       .res-img {
-
-        width: 100%;
-        height: auto;
-
+       
+        width:100%;
+        height:auto;
+        
       }
-
+      
       .res-game {
         padding-left: 10vw;
         padding-right: 10vw;
       }
-
+   
       .responsive-md {
         font-size: 64px;
       }
@@ -379,12 +374,12 @@
 
     @media (min-width:961px) {
       .res-img {
-
-        width: 100%;
-        height: auto;
-
+       
+        width:100%;
+        height:auto;
+        
       }
-
+      
       .res-game {
         padding-left: 10vw;
         padding-right: 10vw;
@@ -419,12 +414,12 @@
 
     @media (min-width:1025px) {
       .res-img {
-
-        width: 100%;
-        height: auto;
-
+       
+        width:100%;
+        height:auto;
+        
       }
-
+      
       .res-game {
         padding-left: 10vw;
         padding-right: 10vw;
@@ -459,12 +454,12 @@
 
     @media (min-width:1281px) {
       .res-img {
-
-        width: 100%;
-        height: auto;
-
+       
+        width:100%;
+        height:auto;
+        
       }
-
+      
       .res-game {
         padding-left: 10vw;
         padding-right: 10vw;
@@ -500,46 +495,46 @@
 
 
   <style>
-    .container {
-      position: relative;
-      width: 50%;
-    }
+.container {
+  position: relative;
+  width: 50%;
+}
 
-    .image {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0;
-      transition: .5s ease;
-      background-color: #000000;
-    }
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #000000;
+}
 
-    .container:hover .overlay {
-      opacity: 0.8;
-    }
+.container:hover .overlay {
+  opacity: 0.8;
+}
 
-    .text {
-      color: white;
-      font-size: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-  </style>
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+</style>
 </body>
 
 </html>
