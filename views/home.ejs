@@ -1,5 +1,3 @@
-<?php ?>
-<!--HTML boiler plate-->
 
 <!DOCTYPE html>
 
@@ -32,18 +30,14 @@
   <script>
     function switchVisible() {
       if (document.getElementById('Div1')) {
-
         if (document.getElementById('Div1').style.display == 'none') {
           document.getElementById('Div1').style.display = 'block';
           document.getElementById('Div2').style.display = 'none';
           document.getElementById('Button1').value = 'Play Game';
-
-
         } else {
           document.getElementById('Div1').style.display = 'none';
           document.getElementById('Div2').style.display = 'block';
           document.getElementById('Button1').value = 'Quit';
-
         }
       }
     }
@@ -150,9 +144,7 @@
             <h1 class="text responsive-md font-wight-bold" style="color:white;">FLAGSHIP EVENT</h1>
           </div>
         </div>
-      </div>
-
-      <% } %>
+     <% } %>
     </div>
     
     
@@ -195,26 +187,20 @@
   <script>
     // Set the date we're counting down to
     var countDownDate = new Date("June 5, 2021 12:00:00").getTime();
-
     // Update the count down every 1 second
     var x = setInterval(function() {
-
       // Get today's date and time
       var now = new Date().getTime();
-
       // Find the distance between now and the count down date
       var distance = countDownDate - now;
-
       // Time calculations for days, hours, minutes and seconds
       var days = Math.floor(distance / (1000 * 60 * 60 * 24));
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
       // Display the result in the element with id="demo"
       document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
         minutes + "m " + seconds + "s ";
-
       // If the count down is finished, write some text
       if (distance < 0) {
         clearInterval(x);
@@ -240,34 +226,26 @@
         padding-left: 8vw;
         padding-right: 8vw;
       }
-
       .responsive-md {
         font-size: 24px;
       }
-
       .responsive-lg {
         font-size: 36px;
       }
-
       .responsive-tx {
         font-size: 16px;
       }
-
       .res-pad {
         padding: 6px;
       }
-
       .res-pad-flag {
         padding: 8px;
       }
-
       .res-mar {
         margin: 8px;
       }
-
       /* smartphones, iPhone, portrait 480x320 phones */
     }
-
     @media (min-width:481px) {
       .res-img {
        
@@ -280,31 +258,24 @@
         padding-left: 10vw;
         padding-right: 10vw;
       }
-
       .responsive-md {
         font-size: 64px;
       }
-
       .responsive-lg {
         font-size: 88px;
       }
-
       .responsive-tx {
         font-size: 32px;
       }
-
       .res-pad {
         padding: 20px;
       }
-
       .res-pad-flag {
         padding: 24px;
       }
-
       .res-mar {
         margin: 16px;
       }
-
       /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     }
     @media (max-width:768px){
@@ -329,30 +300,23 @@
       .responsive-md {
         font-size: 64px;
       }
-
       .responsive-lg {
         font-size: 88px;
       }
-
       .responsive-tx {
         font-size: 32px;
       }
-
       .res-pad {
         padding: 20px;
       }
-
       .res-pad-flag {
         padding: 24px;
       }
-
       .res-mar {
         margin: 16px;
       }
-
       /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     }
-
     @media (min-width:961px) {
       .res-img {
        
@@ -365,34 +329,26 @@
         padding-left: 10vw;
         padding-right: 10vw;
       }
-
       .responsive-md {
         font-size: 64px;
       }
-
       .responsive-lg {
         font-size: 88px;
       }
-
       .responsive-tx {
         font-size: 32px;
       }
-
       .res-pad {
         padding: 20px;
       }
-
       .res-pad-flag {
         padding: 24px;
       }
-
       .res-mar {
         margin: 16px;
       }
-
       /* tablet, landscape iPad, lo-res laptops ands desktops */
     }
-
     @media (min-width:1025px) {
       .res-img {
        
@@ -405,34 +361,26 @@
         padding-left: 10vw;
         padding-right: 10vw;
       }
-
       .responsive-md {
         font-size: 64px;
       }
-
       .responsive-lg {
         font-size: 88px;
       }
-
       .responsive-tx {
         font-size: 32px;
       }
-
       .res-pad {
         padding: 20px;
       }
-
       .res-pad-flag {
         padding: 24px;
       }
-
       .res-mar {
         margin: 16px;
       }
-
       /* big landscape tablets, laptops, and desktops */
     }
-
     @media (min-width:1281px) {
       .res-img {
        
@@ -445,31 +393,24 @@
         padding-left: 10vw;
         padding-right: 10vw;
       }
-
       .responsive-md {
         font-size: 64px;
       }
-
       .responsive-lg {
         font-size: 88px;
       }
-
       .responsive-tx {
         font-size: 32px;
       }
-
       .res-pad {
         padding: 20px;
       }
-
       .res-pad-flag {
         padding: 24px;
       }
-
       .res-mar {
         margin: 16px;
       }
-
       /* hi-res laptops and desktops */
     }
   </style>
@@ -480,13 +421,11 @@
   position: relative;
   width: 50%;
 }
-
 .image {
   display: block;
   width: 100%;
   height: auto;
 }
-
 .overlay {
   position: absolute;
   top: 0;
@@ -499,11 +438,9 @@
   transition: .5s ease;
   background-color: #000000;
 }
-
 .container:hover .overlay {
   opacity: 0.8;
 }
-
 .text {
   color: white;
   font-size: 20px;
@@ -519,5 +456,3 @@
 </body>
 
 </html>
-
-
