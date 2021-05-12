@@ -1,6 +1,17 @@
 const express = require('express');
 const app = express();
 const exressLayouts = require('express-ejs-layouts');
+const mongoose = require('mongoose');
+app.use(express.static("public"))
+app.use(express.static("images"))
+var bodyParser = require('body-parser')
+
+app.use(exressLayouts);
+var ContactUs = require("./models/contactUs");
+var db ="mongodb+srv://nimitha:nimitha@cluster0.kbbl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+mongoose.connect(db, { useUnifiedTopology: true, useNewUrlParser: true })
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.log(err));
 
 app.use(express.static("public"))
 app.use(express.static("images"))
