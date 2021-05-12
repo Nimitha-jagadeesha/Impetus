@@ -9,7 +9,7 @@ var bodyParser = require('body-parser')
 app.use(exressLayouts);
 var ContactUs = require("./models/contactUs");
 var db ="mongodb+srv://nimitha:nimitha@cluster0.kbbl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-mongoose.connect(db, { useUnifiedTopology: true, useNewUrlParser: true })
+mongoose.connect(process.env.db||"mongodb+srv://nimitha:nimitha@cluster0.kbbl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true })
 .then(() => console.log('MongoDB Connected'))
 .catch(err => console.log(err));
 
@@ -21,6 +21,18 @@ var jsonParser = bodyParser.json()
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+
+app.use('/gallery/', (req, res) => res.render('gallery'));
+app.use('/events/', (req, res) => res.render('events'));
+app.use('/covid_awarness/', (req, res) => res.render('covid'));
+app.use('/signin/', (req, res) => res.render('signin'));
+app.use('/success/',(req,res)=>res.render('success'))
+
+
+//Home
+app.get("/", function (req, res) {
+    res.render("home");
+});
 app.post('*', urlencodedParser, function (req, res) {
     var item ={
         email:req.body.email,
@@ -34,20 +46,6 @@ app.post('*', urlencodedParser, function (req, res) {
         }
     })
 })
-app.use('/gallery/', (req, res) => res.render('gallery'));
-app.use('/events/', (req, res) => res.render('events'));
-app.use('/covid_awarness/', (req, res) => res.render('covid'));
-app.use('/signin/', (req, res) => res.render('signin'));
-app.use('/success/',(req,res)=>res.render('success'))
-
-
-//Home
-app.get("/", function (req, res) {
-    res.render("home");
-});
-// app.all('*', (req, res, next) => {
-//     next(new ExpressError('Page Not Found', 404))
-// });
 
 const PORT = process.env.PORT || 3000;
 
