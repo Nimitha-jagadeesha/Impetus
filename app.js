@@ -26,7 +26,7 @@ app.post('*', urlencodedParser, function (req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.redirect("success");
+            res.render('',{success:'Your Message Submitted Successfully'});
         }
     })
 })
