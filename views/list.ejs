@@ -1,0 +1,21 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Sl No</th>
+            <th>Email</th>
+            <th>Meassage</th>
+        </tr>
+    </thead>
+        <% for(var i = 0; i < users.length; i++) { %>
+            <tr>
+                <td><%= i + 1 %></td>
+                <td><%= users[i].email %></td>
+                <td><%= users[i].message %></td> 
+            </tr>
+            <% } %>
+</table>
