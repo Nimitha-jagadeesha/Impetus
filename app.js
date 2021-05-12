@@ -6,11 +6,11 @@ app.set("view engine", "ejs");
 app.use(express.static("public"))
 app.use(express.static("images"))
 var bodyParser = require('body-parser')
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 app.use(exressLayouts);
-// var ContactUs = require("./models/contactUs");
-// var db ="mongodb+srv://nimitha:nimitha@cluster0.kbbl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+var ContactUs = require("./models/contactUs");
+var db ="mongodb+srv://nimitha:nimitha@cluster0.kbbl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 // mongoose.connect(db, { useUnifiedTopology: true, useNewUrlParser: true })
 // .then(() => console.log('MongoDB Connected'))
 // .catch(err => console.log(err));
