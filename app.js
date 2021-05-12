@@ -8,17 +8,17 @@ var bodyParser = require('body-parser')
 
 app.use(exressLayouts);
 var ContactUs = require("./models/contactUs");
-var db = "mongodb+srv://nimitha:nimitha@cluster0.kbbl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 
 app.set("view engine", "ejs");
 app.use(express.static("public"))
 app.use(express.static("image"))
-var jsonParser = bodyParser.json()
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 app.post('*', urlencodedParser, function (req, res) {
+var db = "mongodb+srv://nimitha:nimitha@cluster0.kbbl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
     mongoose.connect(db, { useUnifiedTopology: true, useNewUrlParser: true })
         .then(() => console.log('MongoDB Connected'))
         .catch(err => console.log(err));
