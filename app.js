@@ -8,10 +8,7 @@ var bodyParser = require('body-parser')
 
 app.use(exressLayouts);
 var ContactUs = require("./models/contactUs");
-var db ="mongodb+srv://nimitha:nimitha@cluster0.kbbl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-mongoose.connect(process.env.db||"mongodb+srv://nimitha:nimitha@cluster0.kbbl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true })
-.then(() => console.log('MongoDB Connected'))
-.catch(err => console.log(err));
+
 
 
 app.set("view engine", "ejs");
@@ -34,6 +31,10 @@ app.get("/", function (req, res) {
     res.render("home");
 });
 app.post('*', urlencodedParser, function (req, res) {
+    var db ="mongodb+srv://nimitha:nimitha@cluster0.kbbl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+mongoose.connect(process.env.db||"mongodb+srv://nimitha:nimitha@cluster0.kbbl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true })
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.log(err));
     var item ={
         email:req.body.email,
         message: req.body.message
