@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const exressLayouts = require('express-ejs-layouts');
 app.set("view engine", "ejs");
+let alert = require('alert');  
 
 app.use(express.static("public"))
 app.use(express.static("images"))
@@ -26,7 +27,8 @@ app.post('*', urlencodedParser, function (req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.render('',{success:'Your Message Submitted Successfully'});
+            alert("Submitted Sucessfully")
+            res.render('home');
         }
     })
 })
