@@ -1,0 +1,13 @@
+.article{
+    margin: 4% 6%;
+}
+
+.article p{
+    text-align: justify;
+    color: #111111;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
