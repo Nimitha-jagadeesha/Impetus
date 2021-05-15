@@ -83,8 +83,7 @@ body {
 
 .gallery-image {
   position: relative;
-  margin: 6% 2%;
-  padding: 2% 2%;
+  margin: 2% 2%;
 }
 .gallery-image:before, .gallery-image:after {
   content: "";
@@ -298,137 +297,13 @@ a {
   font-weight: 600;
 }
 
-    .loader-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1000;
-    }
-
-    .loader-wrapper .loader {
-        display: block;
-        position: relative;
-        left: 50%;
-        top: 50%;
-        width: 100px;
-        height: 100px;
-        margin-top: -50px;
-        margin-left: -50px;
-        border: 3px solid transparent;
-        border-top-color: white;
-        border-radius: 50%;
-        z-index: 1001;
-        -webkit-animation: spin 1.5s infinite linear;
-        animation: spin 1.5s infinite linear;
-    }
-
-    .loader-wrapper .loader:before,
-    .loader-wrapper .loader:after {
-        content: '';
-        position: absolute;
-        border-radius: 50%;
-    }
-
-    .loader-wrapper .loader:before {
-        top: 5px;
-        left: 5px;
-        right: 5px;
-        bottom: 5px;
-        border: 3px solid transparent;
-        border-top-color: white;
-        -webkit-animation: spin 2s infinite linear;
-        animation: spin 2s infinite linear;
-    }
-
-    .loader-wrapper .loader:after {
-        top: 15px;
-        left: 15px;
-        right: 15px;
-        bottom: 15px;
-        border: 3px solid transparent;
-        border-top-color: white;
-        -webkit-animation: spin 1s infinite linear;
-        animation: spin 1s infinite linear;
-    }
-
-    @-webkit-keyframes spin {
-        0% {
-            -webkit-transform: rotate(0);
-            transform: rotate(0);
-        }
-
-        100% {
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes spin {
-        0% {
-            -webkit-transform: rotate(0);
-            transform: rotate(0);
-        }
-
-        100% {
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
-
-    /*Section */
-    .loader-section {
-        position: fixed;
-        top: 0;
-        width: 51%;
-        height: 100%;
-
-        background: black;
-        z-index: 1000;
-    }
-
-    .loader-section.section-left {
-        left: 0;
-    }
-
-    .loader-section.section-right {
-        right: 0;
-    }
-
-    .loaded .section-left {
-        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%);
-    }
-
-    .loaded .section-right {
-        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        -webkit-transform: translateX(100%);
-        transform: translateX(100%);
-    }
-
-    .loaded .loader {
-        -webkit-transition: all 0.3s ease-out;
-        transition: all 0.3s ease-out;
-        opacity: 0;
-    }
-
-    .loaded .loader-wrapper {
-        visibility: hidden;
-        -webkit-transform: translateY(-100%);
-        transform: translateY(-100%);
-        -webkit-transition: all 0.3s 1s ease-out;
-        transition: all 0.3s 1s ease-out;
-    }
 </style>
 <script>
- setTimeout(function() {
-        $('body').addClass('loaded');
-    }, 500);
+  setTimeout(function() {
+          $('body').addClass('loaded');
+      }, 500);
 </script>
+
 <script>
   $('.gallery-link').magnificPopup
     type: 'image'
@@ -472,6 +347,7 @@ a {
     <!--google font poppins-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body style="font-family:'Poppins', sans-serif;background-color:black;">
@@ -501,12 +377,12 @@ a {
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Gallery</h1>
         <article class='gallery'>
           <a class='gallery-link' href='/g1.jpeg'>
-            <figure class='gallery-image'>
+            <figure style="margin-top: 0%;" class='gallery-image'>
               <img height='1200' src='/g1.jpeg' width='1600'>
                
             </figure>
           </a>
-          <a class='gallery-link' href='/g2.jpeg'>
+          <a style="margin-top: 6%;" class='gallery-link' href='/g2.jpeg'>
             <figure class='gallery-image'>
               <img height='1000' src='/g2.jpeg' width='1600'>
                
@@ -522,7 +398,7 @@ a {
 
         <article class='gallery'>
           <a class='gallery-link' href='/g4.jpeg'>
-            <figure class='gallery-image'>
+            <figure style="margin-top: 0%;" class='gallery-image'>
               <img height='1000' src='/g4.jpeg' width='1200'>
                
             </figure>
@@ -543,7 +419,7 @@ a {
         
         <article class='gallery'>
           <a class='gallery-link' href='/g7.jpeg'>
-            <figure class='gallery-image'>
+            <figure style="margin-top: 0%;" class='gallery-image'>
               <img height='1200' src='/g7.jpeg' width='1400'>
                
             </figure>
@@ -564,7 +440,7 @@ a {
 
         <article class='gallery'>
           <a class='gallery-link' href='/g10.jpeg'>
-            <figure class='gallery-image'>
+            <figure style="margin-top: 0%;" class='gallery-image'>
               <img height='1400' src='/g10.jpeg' width='1000'>
                
             </figure>
@@ -585,7 +461,7 @@ a {
         
         <article class='gallery'>
           <a class='gallery-link' href='/g13.jpeg'>
-            <figure class='gallery-image'>
+            <figure style="margin-top: 0%;" class='gallery-image'>
               <img height='1400' src='/g13.jpeg' width='1000'>
                
             </figure>
@@ -606,7 +482,7 @@ a {
         
         <article class='gallery'>
           <a class='gallery-link' href='/g16.jpeg'>
-            <figure class='gallery-image'>
+            <figure style="margin-top: 0%;" class='gallery-image'>
               <img height='1400' src='/g16.jpeg' width='1000'>
                
             </figure>
@@ -627,70 +503,7 @@ a {
         
         <article class='gallery'>
           <a class='gallery-link' href='/g16.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g16.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g17.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g17.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g18.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g18.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-        </article>
-
-        <article class='gallery'>
-          <a class='gallery-link' href='/g16.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g16.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g17.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g17.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g18.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g18.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-        </article>
-
-        <article class='gallery'>
-          <a class='gallery-link' href='/g16.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g16.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g17.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g17.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g18.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g18.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-        </article>
-
-        <article class='gallery'>
-          <a class='gallery-link' href='/g16.jpeg'>
-            <figure class='gallery-image'>
+            <figure style="margin-top: 0%;" class='gallery-image'>
               <img height='1400' src='/g16.jpeg' width='1000'>
                
             </figure>
