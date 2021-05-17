@@ -136,81 +136,10 @@
         max-width: 978px;
     }
 
-    * {
-        margin: 0;
-        padding: 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
     .wrapper {
         width: 90%;
         margin: 0 auto;
         max-width: 80rem;
-    }
-
-    .cols {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-    }
-
-    .col {
-        width: calc(25% - 2rem);
-        margin: 1rem;
-        cursor: pointer;
-    }
-
-    .container {
-        -webkit-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-        -webkit-perspective: 1000px;
-        perspective: 1000px;
-    }
-
-    .front {
-        background-size: cover;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-        background-position: center;
-        -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        text-align: center;
-        min-height: 280px;
-        height: auto;
-        border-radius: 10px;
-        color: #fff;
-        font-size: 1.5rem;
-    }
-
-
-    @media screen and (max-width: 64rem) {
-        .col {
-            width: calc(33.333333% - 2rem);
-        }
-    }
-
-    @media screen and (max-width: 48rem) {
-        .col {
-            width: calc(50% - 2rem);
-        }
-    }
-
-    @media screen and (max-width: 32rem) {
-        .col {
-            width: 100%;
-            margin: 0 0 2rem 0;
-        }
     }
 </style>
 <script>
@@ -254,82 +183,50 @@
                     <a href="#" class="nav-item nav-link">Epsilon</a>
                     <a href="gallery" class="nav-item nav-link">Gallery</a>
                     <a href="events" class="nav-item nav-link active">Events</a>
-                    <a href="covid_awarness" class="nav-item nav-link">Covid Awarness</a>
+                    <a href="covid_awarness" class="nav-item nav-link">COVID Awarness</a>
 
                 </div>
             </div>
         </nav>
     </div>
-
-    <!--Flagship events-->
     <div id="part2" class="p-2" style="background-color: white;">
         <h1 class="responsive-md text-center mt-2" style="color: black;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Events</h1>
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"> Events</h1>
+        <br>
         <div class="wrapper">
             <div class="row">
-                <div class="col-12 col-md-4 mb-2" data-toggle="modal" data-target="#summit">
-                    <div class="container">
-                        <div class="front" style="background-image: url('test.jpg');">
-                        </div>
-                        <h5 class="text-center" style="font-weight: bold;">SUMMIT</h5>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 mb-2" data-toggle="modal" data-target="#mockplacements">
-                    <div class="container">
-                        <div class="front" style="background-image: url('test.jpg');">
-                        </div>
-                        <h5 class="text-center" style="font-weight: bold;">MOCK-PLACEMENTS</h5>
-                    </div>
-                </div>
-                <div class="col-12  col-md-4 mb-2" data-toggle="modal" data-target="#civicture">
-                    <div class="container">
-                        <div class="front" style="background-image: url('test.jpg');">
-                        </div>
-                        <h5 class="text-center" style="font-weight: bold;">CIVICTURE</h5>
-                    </div>
-                </div>
-                <div class="col-12  col-md-4 mb-2" data-toggle="modal" data-target="#codestorm">
-                    <div class="container">
-                        <div class="front" style="background-image: url('test.jpg');">
-                        </div>
-                        <h5 class="text-center" style="font-weight: bold;">CODESTORM</h5>
-                    </div>
-                </div>
-                <div class="col-12  col-md-4 mb-2" data-toggle="modal" data-target="#electrovate">
-                    <div class="container">
-                        <div class="front" style="background-image: url('test.jpg');">
-                        </div>
-                        <h5 class="text-center" style="font-weight: bold;">ELECTROVATE</h5>
-                    </div>
-                </div>
-                <div class="col-12  col-md-4 mb-2" data-toggle="modal" data-target="#mechronins">
-                    <div class="container">
-                        <div class="front" style="background-image: url('test.jpg');">
-                        </div>
-                        <h5 class="text-center" style="font-weight: bold;">MECHRONINS</h5>
-                    </div>
-                </div>
-                <div class="col-12  col-md-4 offset-md-4 mb-2" data-toggle="modal" data-target="#silicohack">
-                    <div class="container">
-                        <div class="front" style="background-image: url('test.jpg');">
-                        </div>
-                        <h5 class="text-center" style="font-weight: bold;">SILIC-O-HACK</h5>
-                    </div>
-                </div>
-                <!-- <div class="col-12  col-md-4 mb-2" data-toggle="modal" data-target="#event8">
-                    <div class="container">
-                        <div class="front" style="background-image: url('test.jpg');">
-                        </div>
-                        <h5 class="text-center">Event-8</h5>
-                    </div>
-                </div>
-                <div class="col-12  col-md-4 mb-2" data-toggle="modal" data-target="#event9">
-                    <div class="container">
-                        <div class="front" style="background-image: url('test.jpg');">
-                        </div>
-                        <h5 class="text-center">Event-9</h5>
-                    </div>
-                </div> -->
+
+                <img class="col-12 col-md-4 mb-4" data-toggle="modal" data-target="#breakandbuild"
+                    src="breakandbuild.jpeg" />
+                <img class="col-12  col-md-4 mb-4" data-toggle="modal" data-target="#enigma" src="enigma.jpeg">
+                <img class="col-12  col-md-4 mb-4" data-toggle="modal" data-target="#ipl" src="iplauction.jpeg" />
+                <img class="col-12  col-md-4 mb-4" data-toggle="modal" data-target="#kickstart" src="kickstart.jpeg" />
+                <img class="col-12  col-md-4 mb-4" data-toggle="modal" data-target="#mysterysim"
+                    src="mysterysim.jpeg" />
+                <img class="col-12 col-md-4 mb-2" data-toggle="modal" data-target="#scikannada" src="scikannada.jpeg" />
+            </div>
+        </div>
+    </div>
+    <div id="part2" class="p-2" style="background-color: white;">
+        <br><br>
+        <h1 class="responsive-md text-center mt-2" style="color: black;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Flagship Events</h1>
+        <br>
+        <div class="wrapper">
+            <div class="row">
+
+                <img class="col-12 col-md-4 mb-4" data-toggle="modal" data-target="#mockplacements"
+                    src="mockplacements.jpeg" />
+                <img class="col-12  col-md-4 mb-4" data-toggle="modal" data-target="#civicture" src="civicture.jpeg">
+                <img class="col-12  col-md-4 mb-4" data-toggle="modal" data-target="#codestorm" src="codestorm.jpeg" />
+                <img class="col-12  col-md-4 mb-4" data-toggle="modal" data-target="#electrovate"
+                    src="electrovate.jpeg" />
+                <img class="col-12  col-md-4 mb-4" data-toggle="modal" data-target="#mechronins"
+                    src="mechronins.jpeg" />
+                <img class="col-12  col-md-4  mb-4" data-toggle="modal" data-target="#silicohack"
+                    src="silicohack.jpeg" />
+                <img class="col-12 col-md-4 mb-2 offset-md-4" data-toggle="modal" data-target="#summit"
+                    src="summit.jpeg" />
             </div>
         </div>
     </div>
@@ -357,7 +254,6 @@
                     on next day of round-1.
                 </div>
                 <div class="modal-footer" style="background-color: #000;color: #fff;">
-                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-outline-light">Register</button>
                 </div>
             </div>
@@ -385,7 +281,6 @@
                     <b>Round 2:</b> It consists of 5 coding questions to solve in a span of 3hrs
                 </div>
                 <div class="modal-footer" style="background-color: #000;color: #fff;">
-                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-outline-light">Register</button>
                 </div>
             </div>
@@ -412,7 +307,6 @@
                     every aspect of it.
                 </div>
                 <div class="modal-footer" style="background-color: #000;color: #fff;">
-                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-outline-light">Register</button>
                 </div>
             </div>
@@ -451,7 +345,6 @@
                     submitted on a google form. Later they have to present the same in the zoom meet.
                 </div>
                 <div class="modal-footer" style="background-color: #000;color: #fff;">
-                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-outline-light">Register</button>
                 </div>
             </div>
@@ -475,7 +368,6 @@
                     and convince that it is a good idea.
                 </div>
                 <div class="modal-footer" style="background-color: #000;color: #fff;">
-                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-outline-light">Register</button>
                 </div>
             </div>
@@ -508,7 +400,6 @@
                     points are.
                 </div>
                 <div class="modal-footer" style="background-color: #000;color: #fff;">
-                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-outline-light">Register</button>
                 </div>
             </div>
@@ -543,59 +434,199 @@
 
                 </div>
                 <div class="modal-footer" style="background-color: #000;color: #fff;">
-                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-outline-light">Register</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="event8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal fade" id="enigma" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #000;color: #fff;">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Event-8</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">ENIGMA</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" style="color: white;">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque rerum mollitia optio sit veniam
-                    dolorum provident repellendus vitae saepe eos iusto sequi odit, eaque aut? Sint doloremque tempore
-                    quibusdam velit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque rerum mollitia
-                    optio sit veniam dolorum provident repellendus vitae saepe eos iusto sequi odit, eaque aut? Sint
-                    doloremque tempore quibusdam velit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                    rerum mollitia optio sit veniam dolorum provident repellendus vitae saepe eos iusto sequi odit,
-                    eaque aut? Sint doloremque tempore.
+                    A brainstorming bonanza which will be a test of rapid assessment, technical knowledge,decision
+                    making,presence of mind, skill and agility! A crossword and tehnical designing extravaganza!
+                    <br>
+                    <b>No. of rounds:</b> 2
+                    <br><br>
+                    <b>ROUND 1: </b>ENIGMA:
+                    <br>
+                    The brain-racking opener where contestants are required to solve the crossword given, on retro-tech.
+                    This is not your typical crossword.The contestants then have to decode a problem set for the 2nd
+                    round through the clues given in the crossword via the Enigma App.
+                    <br>
+                    <b>Time:</b> 45 minutes
+                    <br><br>
+                    <b>ROUND 2: </b>THE STOCK:
+                    <br>
+                    In this round, the teams will have to work on the problem set given in the previous round and come
+                    up with an innovative product and advertise it in the most eye catching way possible. The product
+                    then enters into the stock market and every competitor is free to invest in each other's product.
+                    The success of your design will be decided by the market and the competition will conclude with the
+                    team who's product has the highest evaluation.
+                    <br>
+                    <b>Time:</b> 2hrs
+                    <br>
+                    <b>Team Size: </b>2-4
+
                 </div>
                 <div class="modal-footer" style="background-color: #000;color: #fff;">
-                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-outline-light">Register</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="event9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal fade" id="breakandbuild" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #000;color: #fff;">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Event-9</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Break and Build</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" style="color: white;">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque rerum mollitia optio sit veniam
-                    dolorum provident repellendus vitae saepe eos iusto sequi odit, eaque aut? Sint doloremque tempore
-                    quibusdam velit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque rerum mollitia
-                    optio sit veniam dolorum provident repellendus vitae saepe eos iusto sequi odit, eaque aut? Sint
-                    doloremque tempore quibusdam velit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                    rerum mollitia optio sit veniam dolorum provident repellendus vitae saepe eos iusto sequi odit,
-                    eaque aut? Sint doloremque tempore.
+                    <b>Round 1:</b> Scrape down the memory lane...
+                    Brace yourselves for a search like you've never seen before! Participants must find hidden retro
+                    tech words and retro events in the website given and move a step closer towards victory!!
+                    <br><br>
+                    <b>Round 2:</b> Build-a-thon
+                    Here participants must make use of the data found in the first round and build a retro-themed
+                    front-end website. Sharpen your creativity skills and give the best UI to be crowned the victor
+                    <br><br>
+                    <b>Team size : </b> 1-4
                 </div>
                 <div class="modal-footer" style="background-color: #000;color: #fff;">
-                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-light">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="ipl" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #000;color: #fff;">
+                    <h5 class="modal-title" id="exampleModalLongTitle">IPL AUCTION</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b>FIRST ROUND(QUIZ)</b> <br>
+                    Quiz will be conducted on IPL, This will include basic IPL questions and some tricky ones also .
+                    Quiz will have 25 questions . Points secured by the teams will be considered for second round . Quiz
+                    will be held on Kahoot website.One person from each team can take part in quiz , others may help him
+                    answering.Participant will have 10 sec to answer each question .
+                    Average time required for this round: 20 mins
+                    <br><br>
+                    <b>SECOND ROUND(AUCTION)</b><br>
+                    Top 6 teams from first round will be taking part in second round.This will be an auction round where
+                    players will auctioned and teams need to buy players and build their squad of 15 which should
+                    consist of 5 Batters , 5 Bowlers , 3 Allrounders and 2 Wicket Keepers (Compulsory requirement for
+                    the squad).Teams will be given a certain amount of pursue which they have to spend responsibly in
+                    auction while building the squads, if a team fails to build their squad with given pursue ,they will
+                    be disqualified . Each player will have a certain points and base price , the total points of the
+                    whole squad will be considered along with the quiz points . If 2 teams have same number of points ,
+                    the team with more remaining pursue will be considered.Players unsold in 1st round auction will be
+                    auctioned in second round in same auction.average.Players will bid via cosmobuzz website where they
+                    will be pressing the buzzer to place their bid . Auctioneer will host the auction via zoom call .
+                </div>
+                <div class="modal-footer" style="background-color: #000;color: #fff;">
+                    <button type="button" class="btn btn-outline-light">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="scikannada" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #000;color: #fff;">
+                    <h5 class="modal-title" id="exampleModalLongTitle">SCI-KANNADA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b>Round 1:</b> Solving a technical Kannada crossword puzzle.<br><br>
+                    <b>Round 2:</b> Pick and speech where the topics are related to technology. <br><br>
+                    <b>Round 3:</b> Participants has to prepare a ppt for the given problem statement and present the
+                    same.
+                    <br><br>
+                    <b>Team size:</b> 2
+                </div>
+                <div class="modal-footer" style="background-color: #000;color: #fff;">
+                    <button type="button" class="btn btn-outline-light">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="kickstart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #000;color: #fff;">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Kickstart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    To explore in detail every facet related to a startup - in this case, Dunzo - and to use this
+                    knowledge to work on a fresh startup blueprint of your own for a sector of choice.
+                    <br><br>
+                    <b>First Round:</b> Explore and research the startup and every detail connected to it so they learn
+                    firsthand everything there is to the company. They understand the idea behind the birth of Dunzo,
+                    the challenges the startup faced, how they overcame/or did not overcome these challenges and where
+                    they stand now.
+                    <br>
+                    <b>Aim of the First Round:</b> To help the participants research and understand these angles so that
+                    they
+                    live the journey the startup has gone through. This will help them understand startups better and
+                    answer related questions.
+                    <br><br>
+                    <b>Second Round:</b> The participants will now move beyond the learning and research phase and put
+                    their
+                    own thinking to work. They will now come up with the blueprint of a startup that tries to explore
+                    and fulfil all the 10 criteria that the startup’s success will be based upon.
+                </div>
+                <div class="modal-footer" style="background-color: #000;color: #fff;">
+                    <button type="button" class="btn btn-outline-light">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="mysterysim" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #000;color: #fff;">
+                    <h5 class="modal-title" id="exampleModalLongTitle"> Mystery Sim</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b>Round 1 :</b> Conducted using google forms
+                    Questions based on : circuit analysis, emerging technology, circuit building, etc.
+                    <br><br>
+                    <b>Round 2 :</b>Treasure hunt (Puzzle) is given using pdf, solution to be submitted as a pdf.
+                    Moreover simulation of circuits should be done using an online software- Tinkercad
+                    <br><br>
+                    <b>Round 3 :</b> Question given using pdf, solution to be submitted as a pdf.
+                    This Round is a continuation of 2nd round
+                    <br><br>
+                    <b>Team size:</b> 1-4
+                </div>
+                <div class="modal-footer" style="background-color: #000;color: #fff;">
                     <button type="button" class="btn btn-outline-light">Register</button>
                 </div>
             </div>
