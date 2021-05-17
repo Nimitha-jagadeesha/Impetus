@@ -25,21 +25,25 @@
     * {
       box-sizing: border-box;
     }
+
     @font-face {
       font-family: Montserrat-Thin;
       src: url(Montserrat-Thin.ttf);
     }
+
     .hello {
       font-family: 'Montserrat', sans-serif;
       text-align: center;
       padding-top: 35%;
       color: white;
     }
+
     .wellcome {
       font-family: 'Montserrat', sans-serif;
       text-align: center;
       color: white;
     }
+
     .preload {
       width: 100%;
       height: 100%;
@@ -49,6 +53,7 @@
       left: 0;
       z-index: 1;
     }
+
     .loader-frame {
       width: 350px;
       height: 350px;
@@ -56,6 +61,7 @@
       margin-top: 10%;
       position: relative;
     }
+
     .circle {
       position: absolute;
       height: 350px;
@@ -65,6 +71,7 @@
       border-radius: 50%;
       display: inline-block;
     }
+
     .loader1 {
       position: absolute;
       border-radius: 50%;
@@ -74,26 +81,32 @@
       border-bottom: 5px solid rgb(80, 80, 80);
       animation: clockwisespin 5s linear 3;
     }
+
     @keyframes clockwisespin {
       from {
         transform: rotate(0deg);
       }
+
       to {
         transform: rotate(360deg);
       }
     }
+
     @keyframes fadeout {
       from {
         opacity: 1;
       }
+
       to {
         opacity: 0;
       }
     }
+
     @keyframes fadein {
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -142,10 +155,11 @@
     <div class="loader1" id="loader1">
     </div>
     <div class="circle"></div>
-    <h1 class="hello"  style="font-family:'Poppins', sans-serif;">IMPETUS 21.0</h1>
-    <marquee direction = "left" loop=""  scrolldelay=15>
-      <p  class="marq"  style="font-family:'Poppins', sans-serif;color: white;"> <b>RETRO REWIND: THE PAST THAT NEVER WAS</b></p>
-  </marquee>
+    <h1 class="hello" style="font-family:'Poppins', sans-serif;">IMPETUS 21.0</h1>
+    <marquee direction="left" loop="" scrolldelay=15>
+      <p class="marq" style="font-family:'Poppins', sans-serif;color: white;"> <b>RETRO REWIND: THE PAST THAT NEVER
+          WAS</b></p>
+    </marquee>
     <p class="text-center" style="color: white;"> Loading...</p>
   </div>
 </div>
@@ -172,46 +186,46 @@
       class="btn btn-light res-pad res-mar rounded-pill" style="background-color: white; margin:auto; display:block" />-->
 
 
-   <div class="text-center">
+    <div class="text-center">
       <div class="row m-0">
-      
+
 
         <div class="col-12 col-sm-6 text-center ">
-            <div id="Div1">
-          <img class="res-img p-4 text-center" src="impetus21.0.gif" alt="test1" width="100%" height="100%">
-          <!--<video class="p-4" style="width: 600; height: 500;" muted loop autoplay>
+          <div id="Div1">
+            <img class="res-img p-4 text-center" src="impetus21.0.gif" alt="test1" width="100%" height="100%">
+            <!--<video class="p-4" style="width: 600; height: 500;" muted loop autoplay>
             <source src="impetus21.0.mp4" type="video/mp4">
             <source src="impetus21.0.ogg" type="video/ogg">
           </video>-->
-        </div>
-        
-            <div id="Div2">
-                <!--<img class="res-img" src="test1.gif" alt="test1">-->
-                <p id="wasd" class="text-center" style="color:white;">W A S D</p>
-                <div id="gameC" style="margin:0px;">
-                </div>
-                <!-- #scoreContainer contains the scores  -->
-                <div id="scoreC text-center">
-                    <div class="scoreBoard">Score: <span id="pointsEarned">0</span></div>
-                    <!--<div class="scoreBoard">Blocks: <span id="blocksTravelled">0</span></div>-->
-                </div>
-                <!-- #onScreenControllers contains the navigation buttons for mobile screens -->
-                <div id="onScreenControllers">
-                    <button id="leftButton"><i class="fa fa-chevron-left" style="color: white;"></i></button>
-                    <div>
-                        <button id="upButton"><i class="fa fa-chevron-up" style="color: white;"></i></button>
-                        <button id="downButton"><i class="fa fa-chevron-down" style="color: white;"></i></button>
-                    </div>
-                    <button id="rightButton"><i class="fa fa-chevron-right" style="color: white;"></i></button>
-                </div>
-            </div>
+          </div>
 
-            <div id="Div4">
-              <br>
-                <input id="Button1" type="button" value="Play Game" onclick="switchVisible();"
-                    class="btn btn-light res-pad res-mar rounded-pill"
-                    style="background-color: white; margin:auto; display:block" />
+          <div id="Div2">
+            <!--<img class="res-img" src="test1.gif" alt="test1">-->
+            <p id="wasd" class="text-center" style="color:white;">W A S D</p>
+            <div id="gameC" style="margin:0px;">
             </div>
+            <!-- #scoreContainer contains the scores  -->
+            <div id="scoreC text-center">
+              <div class="scoreBoard">Score: <span id="pointsEarned">0</span></div>
+              <!--<div class="scoreBoard">Blocks: <span id="blocksTravelled">0</span></div>-->
+            </div>
+            <!-- #onScreenControllers contains the navigation buttons for mobile screens -->
+            <div id="onScreenControllers">
+              <button id="leftButton"><i class="fa fa-chevron-left" style="color: white;"></i></button>
+              <div>
+                <button id="upButton"><i class="fa fa-chevron-up" style="color: white;"></i></button>
+                <button id="downButton"><i class="fa fa-chevron-down" style="color: white;"></i></button>
+              </div>
+              <button id="rightButton"><i class="fa fa-chevron-right" style="color: white;"></i></button>
+            </div>
+          </div>
+
+          <div id="Div4">
+            <br>
+            <input id="Button1" type="button" value="Play Game" onclick="switchVisible();"
+              class="btn btn-light res-pad res-mar rounded-pill"
+              style="background-color: white; margin:auto; display:block" />
+          </div>
 
         </div>
 
@@ -226,7 +240,7 @@
             style="background-color: gold;border:0px;">Register</button>
           <button type="button" class="btn btn-light res-pad res-mar rounded-pill"
             style="background-color: white;border:0px;">Schedule</button>
-            
+
           <p id="demo" class="font-weight-bold mt-4 responsive-tx" style="color:white;"></p>
 
         </div>
@@ -255,10 +269,10 @@
       we want. IEEE UVCE presents you IMPETUS 21.0, Retro Rewind: The Past That Never Was
 
     <p><a class="play-btn" href="https://www.youtube.com/watch?v=1Eg2gHnAGw8&t=2s">
-      <!--<button type="button" class="btn btn-dark res-pad res-mar rounded-pill" style="background-color: black;">Impetus 20.0</button></a>-->
-    </a></p>
-    
-    
+        <!--<button type="button" class="btn btn-dark res-pad res-mar rounded-pill" style="background-color: black;">Impetus 20.0</button></a>-->
+      </a></p>
+
+
     </p>
 
 
@@ -267,14 +281,59 @@
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"> FLAGSHIP EVENTS</h1>
 
     <div class="row m-4">
-      <% for(var i=0; i < 6; i++) { %>
-        <div class="col-12 col-sm-6 res-pad-flag container">
-          <img src="test.jpg" alt="test" class="res-img">
-          <div class="overlay">
-            <h1 class="text responsive-md font-wight-bold" style="color:white;">FLAGSHIP EVENT</h1>
-          </div>
+      <div class="col-12 col-sm-6 res-pad-flag container">
+        <img src="test.jpg" alt="test" class="res-img">
+        <div class="overlay">
+
+          <h1 class="text responsive-md font-wight-bold" style="color:white;"> <b>CIVICTURE:</b> Solving problem
+            statements
+            on failed structures, and presenting the best suited solution to overcome the failure.</h1>
+          <br>
         </div>
-        <% } %>
+      </div>
+      <div class="col-12 col-sm-6 res-pad-flag container">
+        <img src="test.jpg" alt="test" class="res-img">
+        <div class="overlay">
+          <h1 class="text responsive-md font-wight-bold" style="color:white;">
+            <b>CODESTROM:</b> It is an online competitive contest which tests the problem solving, logical thinking and
+            coding skills of the participants.
+            <br>
+          </h1>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 res-pad-flag container">
+        <img src="test.jpg" alt="test" class="res-img">
+        <div class="overlay">
+          <h1 class="text responsive-md font-wight-bold" style="color:white;"><b>ELECTROVATE:</b>
+            It's a blend of both electronics and design. Let's ignite some creative brains</h1>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 res-pad-flag container">
+        <img src="test.jpg" alt="test" class="res-img">
+        <div class="overlay">
+          <h1 class="text responsive-md font-wight-bold" style="color:white;">
+            <b>MECHRONINS:</b> An event dedicated to all the Mechanical Engineers where your problem solving skills and
+            design capabilities are put to test.
+            <br>
+          </h1>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 res-pad-flag container">
+        <img src="test.jpg" alt="test" class="res-img">
+        <div class="overlay">
+          <h1 class="text responsive-md font-wight-bold" style="color:white;"><b>SILICOHACK:</b> A virtual hardware
+            hackathon using simulation software that requires you to solve a real world problem statement.</h1>
+
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 res-pad-flag container">
+        <img src="test.jpg" alt="test" class="res-img">
+        <div class="overlay">
+          <h1 class="text responsive-md font-wight-bold" style="color:white;"><b>SUMMIT: </b> Summit is a student
+            parliament where innovative ideas and solutions on a current issue are presented to a panel of judges.</h1>
+        </div>
+      </div>
+     
     </div>
 
 
@@ -344,178 +403,232 @@
           width: 100%;
           height: auto;
         }
+
         .res-game {
           padding-left: 8vw;
           padding-right: 8vw;
         }
+
         .responsive-md {
           font-size: 24px;
         }
+
         .responsive-lg {
           font-size: 36px;
         }
+
         .responsive-tx {
           font-size: 16px;
         }
+
         .res-pad {
           padding: 6px;
         }
+
         .res-pad-flag {
           padding: 8px;
         }
+
         .res-mar {
           margin: 8px;
         }
+
         /* smartphones, iPhone, portrait 480x320 phones */
       }
+
       @media (min-width:481px) {
         .res-img {
           width: 100%;
           height: auto;
         }
+
         .res-game {
           padding-left: 10vw;
           padding-right: 10vw;
         }
+
         .responsive-md {
           font-size: 64px;
         }
+
         .responsive-lg {
           font-size: 88px;
         }
+
         .responsive-tx {
           font-size: 32px;
         }
+
         .res-pad {
           padding: 20px;
         }
+
         .res-pad-flag {
           padding: 24px;
         }
+
         .res-mar {
           margin: 16px;
         }
+
         /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
       }
+
       @media (max-width:768px) {
         #wasd {
           display: none;
         }
       }
+
       @media (min-width:768px) {
         .res-img {
           width: 100%;
           height: auto;
         }
+
         .res-game {
           padding-left: 10vw;
           padding-right: 10vw;
         }
+
         .responsive-md {
           font-size: 64px;
         }
+
         .responsive-lg {
           font-size: 88px;
         }
+
         .responsive-tx {
           font-size: 32px;
         }
+
         .res-pad {
           padding: 20px;
         }
+
         .res-pad-flag {
           padding: 24px;
         }
+
         .res-mar {
           margin: 16px;
         }
+
         /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
       }
+
       @media (min-width:961px) {
         .res-img {
           width: 100%;
           height: auto;
         }
+
         .res-game {
           padding-left: 10vw;
           padding-right: 10vw;
         }
+
         .responsive-md {
           font-size: 64px;
         }
+
         .responsive-lg {
           font-size: 88px;
         }
+
         .responsive-tx {
           font-size: 32px;
         }
+
         .res-pad {
           padding: 20px;
         }
+
         .res-pad-flag {
           padding: 24px;
         }
+
         .res-mar {
           margin: 16px;
         }
+
         /* tablet, landscape iPad, lo-res laptops ands desktops */
       }
+
       @media (min-width:1025px) {
         .res-img {
           width: 100%;
           height: auto;
         }
+
         .res-game {
           padding-left: 10vw;
           padding-right: 10vw;
         }
+
         .responsive-md {
           font-size: 64px;
         }
+
         .responsive-lg {
           font-size: 88px;
         }
+
         .responsive-tx {
           font-size: 32px;
         }
+
         .res-pad {
           padding: 20px;
         }
+
         .res-pad-flag {
           padding: 24px;
         }
+
         .res-mar {
           margin: 16px;
         }
+
         /* big landscape tablets, laptops, and desktops */
       }
+
       @media (min-width:1281px) {
         .res-img {
           width: 100%;
           height: auto;
         }
+
         .res-game {
           padding-left: 10vw;
           padding-right: 10vw;
         }
+
         .responsive-md {
           font-size: 64px;
         }
+
         .responsive-lg {
           font-size: 88px;
         }
+
         .responsive-tx {
           font-size: 32px;
         }
+
         .res-pad {
           padding: 20px;
         }
+
         .res-pad-flag {
           padding: 24px;
         }
+
         .res-mar {
           margin: 16px;
         }
+
         /* hi-res laptops and desktops */
       }
     </style>
@@ -526,11 +639,13 @@
         position: relative;
         width: 50%;
       }
+
       .image {
         display: block;
         width: 100%;
         height: auto;
       }
+
       .overlay {
         position: absolute;
         top: 0;
@@ -543,9 +658,11 @@
         transition: .5s ease;
         background-color: #000000;
       }
+
       .container:hover .overlay {
         opacity: 0.8;
       }
+
       .text {
         color: white;
         font-size: 20px;
@@ -558,149 +675,154 @@
         text-align: center;
       }
     </style>
-    
-   
-    
+
+
+
     <!--pulsating register button-->
     <style>
-    
       .pulse {
-  background: #cca92c;
-  cursor: pointer;
-  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
-  animation: pulse 1s infinite;
-}
-.pulse:hover {
-  animation: none;
-}
+        background: #cca92c;
+        cursor: pointer;
+        box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+        animation: pulse 1s infinite;
+      }
 
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-  }
-  70% {
-      -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-  }
-  100% {
-      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-  }
-}
-@keyframes pulse {
-  0% {
-    /*-moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);*/
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-  }
-  70% {
-      /*-moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);*/
-      transform: scale(1);
-      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-  }
-  100% {
-      /*-moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);*/
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-  }
-}
-    
+      .pulse:hover {
+        animation: none;
+      }
+
+      @-webkit-keyframes pulse {
+        0% {
+          -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+        }
+
+        70% {
+          -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+        }
+
+        100% {
+          -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          /*-moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);*/
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+        }
+
+        70% {
+          /*-moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);*/
+          transform: scale(1);
+          box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+        }
+
+        100% {
+          /*-moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);*/
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+        }
+      }
     </style>
-    
-    
+
+
     <!--play button-->
     <style>
-    
-    ::after, ::before
-    {
-      box-sizing:content-box;
-    }
+      ::after,
+      ::before {
+        box-sizing: content-box;
+      }
 
-.play-btn {
-  width: 100px;
-  height: 100px;
-  background: radial-gradient( rgba(0,0,0, 0.8) 60%, rgba(0,0,0, 1) 62%);
-  border-radius: 50%;
-  position: relative;
-  display: block;
-  margin: 10px auto;
-  box-shadow: 0px 0px 25px 3px rgba(0,0,0, 0.8);
-}
+      .play-btn {
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 1) 62%);
+        border-radius: 50%;
+        position: relative;
+        display: block;
+        margin: 10px auto;
+        box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.8);
+      }
 
-/* triangle */
-.play-btn::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateX(-40%) translateY(-50%);
-  transform: translateX(-40%) translateY(-50%);
-  transform-origin: center center;
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 25px solid #fff;
-  z-index: 100;
-  -webkit-transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
+      /* triangle */
+      .play-btn::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translateX(-40%) translateY(-50%);
+        transform: translateX(-40%) translateY(-50%);
+        transform-origin: center center;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 25px solid #fff;
+        z-index: 100;
+        -webkit-transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
 
-/* pulse wave */
-.play-btn:before {
-  content: "";
-  position: absolute;
-  width: 150%;
-  height: 150%;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation: pulsate1 2s;
-  animation: pulsate1 1s easein;
-  -webkit-animation-direction: forwards;
-  animation-direction: forwards;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: steps;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid rgba(255, 255, 255, .75);
-  top: -30%;
-  left: -30%;
-  background: rgba(198, 16, 0, 0);
-}
+      /* pulse wave */
+      .play-btn:before {
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+        -webkit-animation: pulsate1 2s;
+        animation: pulsate1 1s easein;
+        -webkit-animation-direction: forwards;
+        animation-direction: forwards;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-timing-function: steps;
+        animation-timing-function: steps;
+        opacity: 1;
+        border-radius: 50%;
+        border: 5px solid rgba(255, 255, 255, .75);
+        top: -30%;
+        left: -30%;
+        background: rgba(198, 16, 0, 0);
+      }
 
-@-webkit-keyframes pulsate1 {
-  0% {
-    -webkit-transform: scale(0.6);
-    transform: scale(0.6);
-    opacity: 1;
-    box-shadow: inset 0px 0px 25px 3px rgba(255, 255, 255, 0.75), 0px 0px 25px 10px rgba(255, 255, 255, 0.75);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 0;
-    box-shadow: none;
+      @-webkit-keyframes pulsate1 {
+        0% {
+          -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+          opacity: 1;
+          box-shadow: inset 0px 0px 25px 3px rgba(255, 255, 255, 0.75), 0px 0px 25px 10px rgba(255, 255, 255, 0.75);
+        }
 
-  }
-}
+        100% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+          opacity: 0;
+          box-shadow: none;
 
-@keyframes pulsate1 {
-  0% {
-    -webkit-transform: scale(0.6);
-    transform: scale(0.6);
-    opacity: 1;
-    box-shadow: inset 0px 0px 25px 3px rgba(255, 255, 255, 0.75), 0px 0px 25px 10px rgba(255, 255, 255, 0.75);
-  }
-  100% {
-    -webkit-transform: scale(1, 1);
-    transform: scale(1);
-    opacity: 0;
-    box-shadow: none;
+        }
+      }
 
-  }
-}
+      @keyframes pulsate1 {
+        0% {
+          -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+          opacity: 1;
+          box-shadow: inset 0px 0px 25px 3px rgba(255, 255, 255, 0.75), 0px 0px 25px 10px rgba(255, 255, 255, 0.75);
+        }
+
+        100% {
+          -webkit-transform: scale(1, 1);
+          transform: scale(1);
+          opacity: 0;
+          box-shadow: none;
+
+        }
+      }
     </style>
-    
+
 
 </body>
 
