@@ -1,741 +1,563 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-
-.mfp-with-zoom .mfp-title, .touch .gallery-image figcaption, html:not(.touch) .gallery-image figcaption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0);
-  padding: 1em;
-  transition: all 0.2s ease;
-  font-weight: 600;
-  max-width: calc(100% - 9em);
-  line-height: 1.25;
-  text-align: center;
-  box-sizing: border-box;
-}
-.mfp-with-zoom .mfp-title:before, .touch .gallery-image figcaption:before, html:not(.touch) .gallery-image figcaption:before, .mfp-with-zoom .mfp-title:after, .touch .gallery-image figcaption:after, html:not(.touch) .gallery-image figcaption:after {
-  content: "";
-  position: absolute;
-  background: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 100%;
-  padding: 1em;
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  z-index: -1;
-}
-.mfp-with-zoom .mfp-title:before, .touch .gallery-image figcaption:before, html:not(.touch) .gallery-image figcaption:before, .mfp-with-zoom .mfp-title:after, .touch .gallery-image figcaption:after, html:not(.touch) .gallery-image figcaption:after {
-  right: 100%;
-  bottom: 100%;
-}
-.mfp-with-zoom .mfp-title:after, .touch .gallery-image figcaption:after, html:not(.touch) .gallery-image figcaption:after {
-  left: 100%;
-  top: 100%;
-}
-
-.mfp-with-zoom.mfp-ready .mfp-title, .touch .gallery-image figcaption, html:not(.touch) .gallery-image:hover figcaption {
-  color: white;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease 0.3s;
-}
-.mfp-with-zoom.mfp-ready .mfp-title:before, .touch .gallery-image figcaption:before, html:not(.touch) .gallery-image:hover figcaption:before, .mfp-with-zoom.mfp-ready .mfp-title:after, .touch .gallery-image figcaption:after, html:not(.touch) .gallery-image:hover figcaption:after {
-  opacity: 1;
-}
-.mfp-with-zoom.mfp-ready .mfp-title:before, .touch .gallery-image figcaption:before, html:not(.touch) .gallery-image:hover figcaption:before {
-  right: -1.5em;
-  bottom: -1.5em;
-}
-.mfp-with-zoom.mfp-ready .mfp-title:after, .touch .gallery-image figcaption:after, html:not(.touch) .gallery-image:hover figcaption:after {
-  left: -1.5em;
-  top: -1.5em;
-}
-
-html {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizelegibility;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-}
-
-.gallery {
-  -moz-column-gap: 0;
-       column-gap: 0;
-}
-@media (min-width: 480px) {
-  .gallery {
-    -moz-column-count: 2;
-         column-count: 2;
-  }
-}
-@media (min-width: 1260px) {
-  .gallery {
-    -moz-column-count: 3;
-         column-count: 3;
-  }
-}
-
-.gallery-image {
-  position: relative;
-  margin: 2% 2%;
-}
-.gallery-image:before, .gallery-image:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 16px solid rgba(0, 0, 0, 0.1);
-  transition: all 0.2s;
-  will-change: border;
-}
-.gallery-image:after {
-  border-width: 0;
-}
-.gallery-image img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-html:not(.touch) .gallery-image {
-  overflow: hidden;
-}
-html:not(.touch) .gallery-image:hover:before {
-  border-width: 16px;
-}
-html:not(.touch) .gallery-image:hover:after {
-  border-width: 32px;
-}
-.touch .gallery-image figcaption {
-  top: auto;
-  bottom: 2em;
-}
-
-.mfp-with-zoom .mfp-container, .mfp-with-zoom.mfp-bg {
-  opacity: 0;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  transition: all 0.3s ease-out;
-}
-.mfp-with-zoom.mfp-bg {
-  background-color: rgba(0, 0, 0, 0.9);
-}
-.mfp-with-zoom.mfp-ready .mfp-container {
-  opacity: 1;
-}
-.mfp-with-zoom.mfp-ready.mfp-bg {
-  opacity: 1;
-}
-.mfp-with-zoom.mfp-removing .mfp-container, .mfp-with-zoom.mfp-removing.mfp-bg {
-  opacity: 0;
-}
-.mfp-with-zoom img.mfp-img {
-  padding: 0;
-}
-.mfp-with-zoom .mfp-figure:after {
-  top: 0;
-  bottom: 0;
-}
-.mfp-with-zoom .mfp-container {
-  padding: 0;
-}
-.mfp-with-zoom .mfp-content {
-  overflow: hidden;
-}
-.mfp-with-zoom .mfp-bottom-bar {
-  top: auto;
-  bottom: 0;
-  margin-top: 0;
-}
-.mfp-with-zoom .mfp-title {
-  top: auto;
-  bottom: 2em;
-}
-.mfp-arrow {
-  opacity: 1;
-  margin-top: 0 !important;
-  width: 20%;
-  height: 30%;
-  transform: translateY(-50%);
-}
-.mfp-arrow:before, .mfp-arrow:after {
-  margin: 0;
-  border: none;
-  width: 2rem;
-  height: 2rem;
-  transform: rotate(-45deg) translate(-50%, -100%);
-  opacity: 1;
-  top: 50%;
-  left: 50%;
-  transition: all 0.15s;
-}
-.mfp-arrow:active {
-  transform: translateY(-50%) scale(0.95);
-}
-
-.mfp-arrow-left {
-  left: 0;
-}
-.mfp-arrow-left:before, .mfp-arrow-left:after {
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-}
-.mfp-arrow-left:after {
-  margin-left: 2rem;
-}
-.mfp-arrow-left:hover:before, .mfp-arrow-left:active:before {
-  margin-left: 2rem;
-}
-.mfp-arrow-left:hover:after, .mfp-arrow-left:active:after {
-  margin-left: 0;
-}
-
-.mfp-arrow-right {
-  right: 0;
-}
-.mfp-arrow-right:before, .mfp-arrow-right:after {
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
-}
-.mfp-arrow-right:after {
-  margin-left: 2rem;
-}
-.mfp-arrow-right:hover:before {
-  margin-left: 2rem;
-}
-.mfp-arrow-right:hover:after {
-  margin-left: 0;
-}
-
-button.mfp-close {
-  opacity: 1;
-  margin-top: 0 !important;
-  width: 20%;
-  height: 30%;
-  font: 0/0 serif;
-  text-shadow: none;
-  color: transparent;
-}
-button.mfp-close:before, button.mfp-close:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 0;
-  border: none;
-  width: 2rem;
-  height: 2rem;
-  opacity: 1;
-  transition: all 0.15s;
-  transform-origin: 0 0;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-}
-button.mfp-close:before {
-  transform: rotate(-45deg);
-}
-button.mfp-close:after {
-  transform: rotate(135deg);
-}
-button.mfp-close:hover:before {
-  transform: rotate(135deg);
-}
-button.mfp-close:hover:after {
-  transform: rotate(315deg);
-}
-button.mfp-close:active {
-  transform: scale(0.95);
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-[id=footer] {
-  margin-top: 10vh;
-  padding: 10vh 0;
-  text-align: center;
-}
-[id=footer] .container {
-  position: relative;
-}
-[id=footer] .container:before, [id=footer] .container:after {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 20px;
-  z-index: 10;
-  border-top: 2px solid;
-  width: 10%;
-  margin-bottom: 10vh;
-}
-[id=footer] .container:after {
-  left: auto;
-  right: 20px;
-}
-[id=footer] * {
-  display: block;
-}
-[id=footer] * + * {
-  margin-top: 5vh;
-}
-[id=footer] .logo {
-  font-weight: 600;
-  font-size: 1.5em;
-}
-[id=footer] .copy {
-  text-transform: uppercase;
-  font-size: 0.75em;
-  font-weight: 600;
-}
-
-</style>
-<script>
-  setTimeout(function() {
-          $('body').addClass('loaded');
-      }, 500);
-</script>
 
 <script>
-  $('.gallery-link').magnificPopup
-    type: 'image'
-    closeOnContentClick: true
-    closeBtnInside: false
-    mainClass: 'mfp-with-zoom mfp-img-mobile'
-    image: 
-      verticalFit: true
-      titleSrc: (item) ->
-        item.el.find('figcaption').text() || item.el.attr('title')
-    zoom:
-      enabled: true
-      duration: 300
-    gallery:
-      enabled: true
-      navigateByImgClick: false
-      tCounter: ''
-    disableOn: ->
-      $(window).width() > 640 
-</script>
-
-   
+  setTimeout(function () {
+    $('body').addClass('loaded');
+  }, 500);
 </script>
 
 <head>
-    <meta charset="UTF-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impetus 21</title>
-    <link rel="icon" href="/logo.png" type="image/x-icon">
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!--font awesome-->
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <!--bootstrap js-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <!--google font poppins-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impetus 21</title>
+  <link rel="icon" href="/logo.png" type="image/x-icon">
+  <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!--font awesome-->
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!--bootstrap js-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!--google font poppins-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="font-family:'Poppins', sans-serif;background-color:black;">
-    <div id="part1" class="p-2">
-        <!--style="background-color:black;"-->
-        <nav class="navbar navbar-expand-md navbar-dark" style="background-color:black;color:white;">
-            <a href="#" class="navbar-brand"></a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <a href="/" class="nav-item nav-link ">Home</a>
-                    <a href="#" class="nav-item nav-link">Epsilon</a>
-                    <a href="gallery" class="nav-item nav-link active">Gallery</a>
-                    <a href="events" class="nav-item nav-link">Events</a>
-                    <a href="covid_awarness" class="nav-item nav-link">Covid Awarness</a>
-                </div>
-            </div>
-        </nav>
-    </div>
-
-    <!--Flagship events-->
-    <div i
-    d="part2" class="p-2" style="background-color: white;">
-        <h1 class="responsive-md text-center mt-2" style="color: black;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Gallery</h1>
-        <article class='gallery'>
-          <a class='gallery-link' href='/g1.jpeg'>
-            <figure style="margin-top: 0%;" class='gallery-image'>
-              <img height='1200' src='/g1.jpeg' width='1600'>
-               
-            </figure>
-          </a>
-          <a style="margin-top: 6%;" class='gallery-link' href='/g2.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1000' src='/g2.jpeg' width='1600'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g3.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1000' src='/g3.jpeg' width='1200'>
-               
-            </figure>
-          </a>
-        </article>          
-
-        <article class='gallery'>
-          <a class='gallery-link' href='/g4.jpeg'>
-            <figure style="margin-top: 0%;" class='gallery-image'>
-              <img height='1000' src='/g4.jpeg' width='1200'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g5.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g5.jpeg' width='1600'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g6.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1200' src='/g6.jpeg' width='1600'>
-               
-            </figure>
-          </a>
-        </article>          
-        
-        <article class='gallery'>
-          <a class='gallery-link' href='/g7.jpeg'>
-            <figure style="margin-top: 0%;" class='gallery-image'>
-              <img height='1200' src='/g7.jpeg' width='1400'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g8.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1600' src='/g8.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g9.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g9.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-        </article>          
-
-        <article class='gallery'>
-          <a class='gallery-link' href='/g10.jpeg'>
-            <figure style="margin-top: 0%;" class='gallery-image'>
-              <img height='1400' src='/g10.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g11.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g11.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g12.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g12.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-        </article>          
-        
-        <article class='gallery'>
-          <a class='gallery-link' href='/g13.jpeg'>
-            <figure style="margin-top: 0%;" class='gallery-image'>
-              <img height='1400' src='/g13.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g14.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g14.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g15.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g15.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-        </article>          
-        
-        <article class='gallery'>
-          <a class='gallery-link' href='/g16.jpeg'>
-            <figure style="margin-top: 0%;" class='gallery-image'>
-              <img height='1400' src='/g16.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g17.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g17.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g18.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g18.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-        </article>
-        
-        <article class='gallery'>
-          <a class='gallery-link' href='/g16.jpeg'>
-            <figure style="margin-top: 0%;" class='gallery-image'>
-              <img height='1400' src='/g16.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g17.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g17.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-          <a class='gallery-link' href='/g18.jpeg'>
-            <figure class='gallery-image'>
-              <img height='1400' src='/g18.jpeg' width='1000'>
-               
-            </figure>
-          </a>
-        </article>
-
-    </div>
-
-    <div class="content">
-        <div class="loader-wrapper">
-            <div class="loader"></div>
-
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
+<body>
+  <div id="part1" class="p-2" style="font-family:'Poppins', sans-serif;background-color:black;">
+    <!--style="background-color:black;"-->
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color:black;color:white;">
+      <a href="#" class="navbar-brand"></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+          <a href="/" class="nav-item nav-link ">Home</a>
+          <a href="#" class="nav-item nav-link">Epsilon</a>
+          <a href="gallery" class="nav-item nav-link active">Gallery</a>
+          <a href="events" class="nav-item nav-link">Events</a>
+          <a href="covid_awarness" class="nav-item nav-link">Covid Awarness</a>
         </div>
+      </div>
+    </nav>
+  </div>
+  <div style="margin: 20px;">
+    <h1 class="responsive-md text-center mt-2" style="color: black;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Gallery</h1>
+    <div class="row">
+      <div class="col-12 col-md-4 mb-2">
+        <img src="g1.jpeg" onclick="openModal();currentSlide(1)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g2.jpeg" onclick="openModal();currentSlide(2)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g3.jpeg" onclick="openModal();currentSlide(3)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g4.jpeg" onclick="openModal();currentSlide(4)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4 mb-2">
+        <img src="g5.jpeg" onclick="openModal();currentSlide(5)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g6.jpeg" onclick="openModal();currentSlide(6)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g7.jpeg" onclick="openModal();currentSlide(7)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g8.jpeg" onclick="openModal();currentSlide(8)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4 mb-2">
+        <img src="g9.jpeg" onclick="openModal();currentSlide(9)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g10.jpeg" onclick="openModal();currentSlide(10)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g11.jpeg" onclick="openModal();currentSlide(11)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g12.jpeg" onclick="openModal();currentSlide(12)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4 mb-2">
+        <img src="g13.jpeg" onclick="openModal();currentSlide(13)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g14.jpeg" onclick="openModal();currentSlide(14)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g15.jpeg" onclick="openModal();currentSlide(15)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g16.jpeg" onclick="openModal();currentSlide(16)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g17.jpeg" onclick="openModal();currentSlide(17)" class="hover-shadow" width="100%">
+      </div>
+      <div class="col-12 col-md-4  mb-2">
+        <img src="g18.jpeg" onclick="openModal();currentSlide(18)" class="hover-shadow" width="100%">
+      </div>
     </div>
 
-    <!--Contact us-->
+    <!-- The Modal/Lightbox -->
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()" style="color: white;">&times;</span>
+      <div class="modal-content">
+        <div class="mySlides">
+          <div class="numbertext">1 / 18</div>
+          <img src="g1.jpeg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 18</div>
+          <img src="g2.jpeg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">3 / 18</div>
+          <img src="g3.jpeg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">4 / 18</div>
+          <img src="g4.jpeg" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">5 / 18</div>
+          <img src="g5.jpeg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">6 / 18</div>
+          <img src="g6.jpeg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">7 / 18</div>
+          <img src="g7.jpeg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">8 / 18</div>
+          <img src="g8.jpeg" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">9 / 18</div>
+          <img src="g9.jpeg" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">10 / 18</div>
+          <img src="g10.jpeg" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">11 / 18</div>
+          <img src="g11.jpeg" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">12 / 18</div>
+          <img src="g12.jpeg" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">13 / 18</div>
+          <img src="g13.jpeg" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">14 / 18</div>
+          <img src="g14.jpeg" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">15 / 18</div>
+          <img src="g15.jpeg" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">16 / 18</div>
+          <img src="g16.jpeg" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">17 / 18</div>
+          <img src="g17.jpeg" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">18 / 18</div>
+          <img src="g18.jpeg" style="width:100%">
+        </div>
+        <!-- Next/previous controls -->
+        <a class="prev" onclick="plusSlides(-1)" style="background-color: white;color: black;">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)" style="background-color: white;color: black;">&#10095;</a>
+      </div>
+      <div class="content">
+        <div class="loader-wrapper">
+          <div class="loader"></div>
+
+          <div class="loader-section section-left"></div>
+          <div class="loader-section section-right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!--Contact us-->
+<div style="background-color: black;">
+
   <%- include('footer'); -%>
-    
-    <style>
-        /*Media Queries*/
-        @media (min-width:320px) {
-            .res-game {
-                padding-left: 8vw;
-                padding-right: 8vw;
-            }
+</div>
+<style>
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+  }
 
-            .responsive-md {
-                font-size: 24px;
-            }
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1000px;
+  }
 
-            .responsive-lg {
-                font-size: 36px;
-            }
+  /* The Close Button */
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 25px;
+    font-weight: bold;
+  }
 
-            .responsive-tx {
-                font-size: 16px;
-            }
+  .close:hover,
+  .close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-            .res-pad {
-                padding: 10px;
-            }
+  /* Hide the slides by default */
+  .mySlides {
+    display: none;
+  }
 
-            .res-pad-flag {
-                padding: 8px;
-            }
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
 
-            .res-mar {
-                margin: 8px;
-            }
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
 
-            /* smartphones, iPhone, portrait 480x320 phones */
-        }
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgb(58, 54, 54);
+  }
 
-        @media (min-width:481px) {
-            .res-game {
-                padding-left: 10vw;
-                padding-right: 10vw;
-            }
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
 
-            .responsive-md {
-                font-size: 64px;
-            }
+  img.demo {
+    opacity: 0.6;
+  }
 
-            .responsive-lg {
-                font-size: 88px;
-            }
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
 
-            .responsive-tx {
-                font-size: 32px;
-            }
+  img.hover-shadow {
+    transition: 0.3s;
+  }
 
-            .res-pad {
-                padding: 20px;
-            }
+  .hover-shadow:hover {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 15px 25px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+    width: 101%;
+  }
+</style>
+<script>
+  // Open the Modal
+  function openModal() {
+    document.getElementById("myModal").style.display = "block";
+  }
 
-            .res-pad-flag {
-                padding: 24px;
-            }
+  // Close the Modal
+  function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+  }
 
-            .res-mar {
-                margin: 16px;
-            }
+  var slideIndex = 1;
+  showSlides(slideIndex);
 
-            /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-        }
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
 
-        @media (min-width:641px) {
-            .res-game {
-                padding-left: 10vw;
-                padding-right: 10vw;
-            }
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
 
-            .responsive-md {
-                font-size: 64px;
-            }
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    captionText.innerHTML = dots[slideIndex - 1].alt;
+  }
+</script>
+<style>
+  /*Media Queries*/
+  @media (min-width:320px) {
+    .res-game {
+      padding-left: 8vw;
+      padding-right: 8vw;
+    }
 
-            .responsive-lg {
-                font-size: 88px;
-            }
+    .responsive-md {
+      font-size: 24px;
+    }
 
-            .responsive-tx {
-                font-size: 32px;
-            }
+    .responsive-lg {
+      font-size: 36px;
+    }
 
-            .res-pad {
-                padding: 20px;
-            }
+    .responsive-tx {
+      font-size: 16px;
+    }
 
-            .res-pad-flag {
-                padding: 24px;
-            }
+    .res-pad {
+      padding: 10px;
+    }
 
-            .res-mar {
-                margin: 16px;
-            }
+    .res-pad-flag {
+      padding: 8px;
+    }
 
-            /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-        }
+    .res-mar {
+      margin: 8px;
+    }
 
-        @media (min-width:961px) {
-            .res-game {
-                padding-left: 10vw;
-                padding-right: 10vw;
-            }
+    /* smartphones, iPhone, portrait 480x320 phones */
+  }
 
-            .responsive-md {
-                font-size: 64px;
-            }
+  @media (min-width:481px) {
+    .res-game {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
 
-            .responsive-lg {
-                font-size: 88px;
-            }
+    .responsive-md {
+      font-size: 64px;
+    }
 
-            .responsive-tx {
-                font-size: 32px;
-            }
+    .responsive-lg {
+      font-size: 88px;
+    }
 
-            .res-pad {
-                padding: 20px;
-            }
+    .responsive-tx {
+      font-size: 32px;
+    }
 
-            .res-pad-flag {
-                padding: 24px;
-            }
+    .res-pad {
+      padding: 20px;
+    }
 
-            .res-mar {
-                margin: 16px;
-            }
+    .res-pad-flag {
+      padding: 24px;
+    }
 
-            /* tablet, landscape iPad, lo-res laptops ands desktops */
-        }
+    .res-mar {
+      margin: 16px;
+    }
 
-        @media (min-width:1025px) {
-            .res-game {
-                padding-left: 10vw;
-                padding-right: 10vw;
-            }
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  }
 
-            .responsive-md {
-                font-size: 64px;
-            }
+  @media (min-width:641px) {
+    .res-game {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
 
-            .responsive-lg {
-                font-size: 88px;
-            }
+    .responsive-md {
+      font-size: 64px;
+    }
 
-            .responsive-tx {
-                font-size: 32px;
-            }
+    .responsive-lg {
+      font-size: 88px;
+    }
 
-            .res-pad {
-                padding: 20px;
-            }
+    .responsive-tx {
+      font-size: 32px;
+    }
 
-            .res-pad-flag {
-                padding: 24px;
-            }
+    .res-pad {
+      padding: 20px;
+    }
 
-            .res-mar {
-                margin: 16px;
-            }
+    .res-pad-flag {
+      padding: 24px;
+    }
 
-            /* big landscape tablets, laptops, and desktops */
-        }
+    .res-mar {
+      margin: 16px;
+    }
 
-        @media (min-width:1281px) {
-            .res-game {
-                padding-left: 10vw;
-                padding-right: 10vw;
-            }
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  }
 
-            .responsive-md {
-                font-size: 64px;
-            }
+  @media (min-width:961px) {
+    .res-game {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
 
-            .responsive-lg {
-                font-size: 88px;
-            }
+    .responsive-md {
+      font-size: 64px;
+    }
 
-            .responsive-tx {
-                font-size: 32px;
-            }
+    .responsive-lg {
+      font-size: 88px;
+    }
 
-            .res-pad {
-                padding: 20px;
-            }
+    .responsive-tx {
+      font-size: 32px;
+    }
 
-            .res-pad-flag {
-                padding: 24px;
-            }
+    .res-pad {
+      padding: 20px;
+    }
 
-            .res-mar {
-                margin: 16px;
-            }
+    .res-pad-flag {
+      padding: 24px;
+    }
 
-            /* hi-res laptops and desktops */
-        }
-    </style>
+    .res-mar {
+      margin: 16px;
+    }
+
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+  }
+
+  @media (min-width:1025px) {
+    .res-game {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+
+    .responsive-md {
+      font-size: 64px;
+    }
+
+    .responsive-lg {
+      font-size: 88px;
+    }
+
+    .responsive-tx {
+      font-size: 32px;
+    }
+
+    .res-pad {
+      padding: 20px;
+    }
+
+    .res-pad-flag {
+      padding: 24px;
+    }
+
+    .res-mar {
+      margin: 16px;
+    }
+
+    /* big landscape tablets, laptops, and desktops */
+  }
+
+  @media (min-width:1281px) {
+    .res-game {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+
+    .responsive-md {
+      font-size: 64px;
+    }
+
+    .responsive-lg {
+      font-size: 88px;
+    }
+
+    .responsive-tx {
+      font-size: 32px;
+    }
+
+    .res-pad {
+      padding: 20px;
+    }
+
+    .res-pad-flag {
+      padding: 24px;
+    }
+
+    .res-mar {
+      margin: 16px;
+    }
+
+    /* hi-res laptops and desktops */
+  }
+</style>
 </body>
 
 </html>
