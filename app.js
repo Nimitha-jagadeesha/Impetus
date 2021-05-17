@@ -37,7 +37,6 @@ app.use('/events/', (req, res) => res.render('events'));
 app.use('/covid_awarness/', (req, res) => res.render('covid'));
 app.use('/signin/', (req, res) => res.render('signin'));
 app.use('/success/', (req, res) => res.render('success'))
-app.use('/schedule/', (req, res) => res.render('schedule'))
 app.get("/admin/impetus21/allmessages/adminpanel", function (req, res) {
     let data=[];
     ContactUs.find({}).then(function (storedDataArray) {
