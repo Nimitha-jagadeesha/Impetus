@@ -283,15 +283,16 @@
 
     <!--Events-->
     <h1 class="responsive-md text-center mt-2 pt-5" style="color: #000;
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"> FLAGSHIP EVENTS</h1>
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"> FLAGSHIP EVENTS
+    </h1>
 
-    <div class="row m-4 padding: 0% 6%">
+    <div class="row m-4" style="padding: 0% 2%">
 
       <div class="col-12 col-md-4 res-pad-flag container">
         <img src="mockplacements.jpeg" alt="test" class="res-img">
         <div class="overlay">
-          <h6 class="text responsive-md font-wight-bold">
-            <b>MOCK-PLACEMENTS </b> It is a simulation of an actual placement drive. It provides an opportunity to become
+          <h6 class="mtext responsive-md font-wight-bold">
+            <p style="text-align: center;"><b>MOCK-PLACEMENTS </b></p> It is a simulation of an actual placement drive. It provides an opportunity to become
             familiar with the procedure in an environment similar to that of actual placement.
 
             <br>
@@ -302,7 +303,7 @@
         <img src="civicture.jpeg" alt="test" class="res-img">
         <div class="overlay">
 
-          <h6 class="text responsive-md font-wight-bold"> <b>CIVICTURE</b><br><br>
+          <h6 class="text responsive-md font-wight-bold"> <p style="text-align: center;"><b>CIVICTURE</b></p>
             Solving problem statements on failed structures, and presenting the best suited solution to overcome the failure.</h6>
           <br>
         </div>
@@ -311,7 +312,7 @@
         <img src="codestorm.jpeg" alt="test" class="res-img">
         <div class="overlay">
           <h6 class="text responsive-md font-wight-bold">
-            <b>CODESTORM</b><br><br> It is an online competitive contest which tests the problem solving, logical
+            <p style="text-align: center;" ><b>CODESTORM</b></p>It is an online competitive contest which tests the problem solving, logical
             thinking and
             coding skills of the participants.
             <br>
@@ -321,7 +322,8 @@
       <div class="col-12 col-md-4 res-pad-flag container">
         <img src="electrovate.jpeg" alt="test" class="res-img">
         <div class="overlay">
-          <h6 class="text responsive-md font-wight-bold"><b>ELECTROVATE</b><br><br>
+          <h6 class="text responsive-md font-wight-bold">
+            <p style="text-align: center;"><b>ELECTROVATE</b></p>
             It's a blend of both electronics and design. Let's ignite some creative brains.</h6>
         </div>
       </div>
@@ -330,9 +332,9 @@
         <img src="mechronins.jpeg" alt="test" class="res-img">
         <div class="overlay">
           <h6 class="text responsive-md font-wight-bold">
-            <b>MECHRONINS</b><br><br> An event dedicated to all the Mechanical Engineers where your problem solving
+            <p style="text-align: center;"><b> MECHRONINS </b></p>
+            An event dedicated to all the Mechanical Engineers where your problem solving
             skills and design capabilities are put to test.
-            <br>
           </h6>
         </div>
       </div>
@@ -340,14 +342,16 @@
       <div class="col-12 col-md-4 res-pad-flag container">
         <img src="silicohack.jpeg" alt="test" class="res-img">
         <div class="overlay">
-          <h6 class="text responsive-md font-wight-bold"><b>SILICOHACK</b><br><br> A
+          <h6 class="text responsive-md font-wight-bold">
+            <p style="text-align: center;"> <b> SILICOHACK</b></p> A
             virtual hardware hackathon using simulation software that requires you to solve a real world problem statement.</h6>
         </div>
       </div>
       <div class="col-12 col-md-4 res-pad-flag container">
         <img src="summit.jpeg" alt="test" class="res-img">
         <div class="overlay">
-          <h6 class="text responsive-md font-wight-bold"><b>SUMMIT </b><br><br> Summit is
+          <h6 class="text responsive-md font-wight-bold">
+            <p style="text-align: center;"> <b>SUMMIT </b> </p> Summit is
             a student parliament where innovative ideas and solutions on a current issue are presented to a panel of judges.</h6>
         </div>
       </div>
@@ -687,14 +691,55 @@
 
       .text {
         color: white;
-        font-size: 1.5vw;
-        position: absolute;
+        font-size: 2.0vw;
+        position: relative;
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        text-align: center;
+        text-align: justify;
+        padding: 6%;
+      }
+
+      .mtext {
+          color: white;
+          font-size: 2.0vw;
+          position: relative;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: justify;
+          padding: 0% 6%;
+      }
+      @media (max-width:768px) {
+          .text {
+            color: white;
+            font-size: 5.0vw;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: justify;
+            padding: 4%;
+        } 
+
+        .mtext {
+          color: white;
+          font-size: 5.6vw;
+          position: relative;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: justify;
+          padding: 0% 4%;
+        }
       }
     </style>
 
@@ -703,6 +748,7 @@
     <!--pulsating register button-->
     <style>
       .pulse {
+        font-size: 2rem;
         background: #cca92c;
         cursor: pointer;
         box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
