@@ -155,13 +155,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<div class="content">
-  <div class="loader-wrapper">
-    <div class="loader"></div>
-
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-  </div>
   <body>
     <div id="part1" class="p-2" style="font-family:'Poppins', sans-serif;background-color:black;">
       <!--style="background-color:black;"-->
@@ -331,362 +324,460 @@
 
       </div>
     </div>
-</div>
-
-</body>
-<!--Contact us-->
-<div style="background-color: black;">
-
-  <%- include('footer'); -%>
-</div>
-<style>
-  /* The Modal (background) */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: black;
-  }
-
-  /* Modal Content */
-  .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    width: 90%;
-    max-width: 1000px;
-  }
-
-  /* The Close Button */
-  .close {
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 25px;
-    font-weight: bold;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  /* Hide the slides by default */
-  .mySlides {
-    display: none;
-  }
-
-  /* Next & previous buttons */
-  .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -50px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    -webkit-user-select: none;
-  }
-
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover,
-  .next:hover {
-    background-color: rgb(58, 54, 54);
-  }
-
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-
-  img.demo {
-    opacity: 0.6;
-  }
-
-  .active,
-  .demo:hover {
-    opacity: 1;
-  }
-
-  img.hover-shadow {
-    transition: 0.3s;
-  }
-
-  .hover-shadow:hover {
-    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 15px 25px 0 rgba(0, 0, 0, 0.19);
-    z-index: 1;
-    width: 101%;
-  }
-</style>
-<script>
-  // Open the Modal
-  function openModal() {
-    document.getElementById("myModal").style.display = "block";
-  }
-
-  // Close the Modal
-  function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-  }
-
-  var slideIndex = 1;
-  showSlides(slideIndex);
-
-  // Next/previous controls
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  // Thumbnail image controls
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
-    var captionText = document.getElementById("caption");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-    captionText.innerHTML = dots[slideIndex - 1].alt;
-  }
-</script>
-<style>
-  /*Media Queries*/
-  @media (min-width:320px) {
-    .res-game {
-      padding-left: 8vw;
-      padding-right: 8vw;
-    }
-
-    .responsive-md {
-      font-size: 24px;
-    }
-
-    .responsive-lg {
-      font-size: 36px;
-    }
-
-    .responsive-tx {
-      font-size: 16px;
-    }
-
-    .res-pad {
-      padding: 10px;
-    }
-
-    .res-pad-flag {
-      padding: 8px;
-    }
-
-    .res-mar {
-      margin: 8px;
-    }
-
-    /* smartphones, iPhone, portrait 480x320 phones */
-  }
-
-  @media (min-width:481px) {
-    .res-game {
-      padding-left: 10vw;
-      padding-right: 10vw;
-    }
-
-    .responsive-md {
-      font-size: 64px;
-    }
-
-    .responsive-lg {
-      font-size: 88px;
-    }
-
-    .responsive-tx {
-      font-size: 32px;
-    }
-
-    .res-pad {
-      padding: 20px;
-    }
-
-    .res-pad-flag {
-      padding: 24px;
-    }
-
-    .res-mar {
-      margin: 16px;
-    }
-
-    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-  }
-
-  @media (min-width:641px) {
-    .res-game {
-      padding-left: 10vw;
-      padding-right: 10vw;
-    }
-
-    .responsive-md {
-      font-size: 64px;
-    }
-
-    .responsive-lg {
-      font-size: 88px;
-    }
-
-    .responsive-tx {
-      font-size: 32px;
-    }
-
-    .res-pad {
-      padding: 20px;
-    }
-
-    .res-pad-flag {
-      padding: 24px;
-    }
-
-    .res-mar {
-      margin: 16px;
-    }
-
-    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-  }
-
-  @media (min-width:961px) {
-    .res-game {
-      padding-left: 10vw;
-      padding-right: 10vw;
-    }
-
-    .responsive-md {
-      font-size: 64px;
-    }
-
-    .responsive-lg {
-      font-size: 88px;
-    }
-
-    .responsive-tx {
-      font-size: 32px;
-    }
-
-    .res-pad {
-      padding: 20px;
-    }
-
-    .res-pad-flag {
-      padding: 24px;
-    }
-
-    .res-mar {
-      margin: 16px;
-    }
-
-    /* tablet, landscape iPad, lo-res laptops ands desktops */
-  }
-
-  @media (min-width:1025px) {
-    .res-game {
-      padding-left: 10vw;
-      padding-right: 10vw;
-    }
-
-    .responsive-md {
-      font-size: 64px;
-    }
-
-    .responsive-lg {
-      font-size: 88px;
-    }
-
-    .responsive-tx {
-      font-size: 32px;
-    }
-
-    .res-pad {
-      padding: 20px;
-    }
-
-    .res-pad-flag {
-      padding: 24px;
-    }
-
-    .res-mar {
-      margin: 16px;
-    }
-
-    /* big landscape tablets, laptops, and desktops */
-  }
-
-  @media (min-width:1281px) {
-    .res-game {
-      padding-left: 10vw;
-      padding-right: 10vw;
-    }
-
-    .responsive-md {
-      font-size: 64px;
-    }
-
-    .responsive-lg {
-      font-size: 88px;
-    }
-
-    .responsive-tx {
-      font-size: 32px;
-    }
-
-    .res-pad {
-      padding: 20px;
-    }
-
-    .res-pad-flag {
-      padding: 24px;
-    }
-
-    .res-mar {
-      margin: 16px;
-    }
-
-    /* hi-res laptops and desktops */
-  }
-</style>
-</body>
+    <div class="content">
+      <div class="loader-wrapper">
+        <div class="loader"></div>
+    
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+      </div>
+    </div>
+
+  <!--Contact us-->
+    <div style="background-color: black; padding-top: 3%;">
+
+      <div style="padding: 0% 10% 0% 10%" class="row m-0">
+        <div class="col-12 col-sm-4">
+          <a target="_blank" href="http://www.ieeeuvce.in/">
+            <img height="190" width="190" src="/ieee_logo.webp" alt="IEEE UVCE logo" srcset="">
+          </a>
+          <a target="_blank" href="/">
+          <h1 class="responsive-tx font-wight-bold" style="color: white; font-size: 40px; font-family: 'Poppins', sans-serif;
+          text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;">IMPETUS 21.0</h1>
+          </a>
+          <a target="_blank" href="http://www.ieeeuvce.in/">
+            <p style="text-align: left; color:white; font-size: 30px; font-family: 'Poppins', sans-serif;">IEEE UVCE</p>
+          </a>
+          <a href="https://twitter.com/ieeeuvce?s=09" target="_blank">
+            <i class="fab fa-twitter pr-2 mob" style="color:white;"></i>
+          </a>
+          <a href="https://www.facebook.com/impetusuvce" target="_blank">
+            <i class="fab fa-facebook pr-2 mob" style="color:white;"></i>
+          </a>
+          <a href="https://www.instagram.com/impetusuvce/" target="_blank">
+            <i class="fab fa-instagram pr-2 mob" style="color:white;"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ieee-uvce-66563332" target="_blank">
+            <i class="fab fa-linkedin pr-2 mob" style="color:white;"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UCt9I0q7BzuuRBcJKvMcdpow" target="_blank">
+            <i class="fab fa-youtube pr-2 mob" style="color:white;"></i>
+          </a>
+          <a href="mailto:uvce.ieee@gmail.com" target="_blank"> 
+            <i class="fas fa-envelope-square pr-2 mob" style="color:white;"></i> 
+          </a>
+        </div>
+        <div class="col-12 col-sm-4">
+          <h1 class="responsive-tx font-wight-bold" style="color: white;  font-size: 40px; font-family: 'Poppins', sans-serif;
+          text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;">Contact</h1>
+          <p style="color:white; text-align: left; font-family: 'Poppins', sans-serif;" class="responsive-cfl m-0">Kennith O Koshy</p>
+          <p style="text-align: left; font-family: 'Poppins', sans-serif;" class="responsive-cfs">
+            <a style="color:white;" href="tel:+91 94839 51925">+91 94839 51925</a>
+          </p>
+    
+          <p style="color:white; text-align: left; font-family: 'Poppins', sans-serif;" class="responsive-cfl m-0">Hamsa Shree N A</p>
+          <p style="text-align: left; font-family: 'Poppins', sans-serif;" class="responsive-cfs">
+            <a style="color:white;" href="tel:+91 80730 05980">+91 80730 05980</a>
+          </p>
+          
+          <p style="color:white; text-align: left; font-family: 'Poppins', sans-serif;" class="responsive-cfl m-0">Sandya Shree N</p>
+          <p style="text-align: left; font-family: 'Poppins', sans-serif;" class="responsive-cfs">
+            <a style="color:white;" href="tel:+91 82962 30045">+91 82962 30045</a>
+          </p>
+          
+          <p style="color:white; text-align: left; font-family: 'Poppins', sans-serif;" class="responsive-cfl m-0">Vishal M Kanthi</p>
+          <p style="text-align: left; font-family: 'Poppins', sans-serif;" class="responsive-cfs">
+            <a style="color:white;" href="tel:+91 98860 02413">+91 98860 02413</a>
+          </p>
+          
+          <p style="color:white; text-align: left; font-family: 'Poppins', sans-serif;" class="responsive-cfl m-0">Rajat R Lingadalli</p>
+          <p style="text-align: left; font-family: 'Poppins', sans-serif;" class="responsive-cfs">
+            <a style="color:white;" href="tel:+91 96868 24746">+91 96868 24746</a>
+          </p>
+        </div>
+        <div class="col-12 col-sm-3">
+          <h1 class="responsive-tx font-wight-bold" style="color: white; font-size: 40px; font-family: 'Poppins', sans-serif;
+            text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;">Enquiry Form</h1>
+            <form action="" method="POST">
+              <div class="form-group">
+                <label for="exampleInputEmail1" style="color:white; font-family: 'Poppins', sans-serif;">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" required>
+                <small id="emailHelp" class="form-text text-muted" style="color:white; font-family: 'Poppins', sans-serif;">We'll never share your email with
+                  anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1" style="color:white; font-family: 'Poppins', sans-serif;">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message" required></textarea>
+              </div>
+              <button type="submit" style="font-family: 'Poppins', sans-serif;" class="btn btn-outline-light">Submit</button>
+            </form>
+          </div>      
+        </div>
+        <hr style="height:2px; color: #fff;">
+        <div class="copyright text-center py-3 aos-init aos-animate" data-aos="fade-up">
+          <p style="color: #fff; font-family: 'Poppins', sans-serif;">Web Masters:</p>
+          <a style="color: #fff; font-family: 'Poppins', sans-serif;" href="mailto:">Manoj Kumar A</a><br>
+          <a style="margin: 0% 5%; color: #fff; font-family: 'Poppins', sans-serif;" href="mailto:">Nimitha J</a><br>
+          <a style="color: #fff; font-family: 'Poppins', sans-serif;" href="mailto:">Munnoli Sammed Jaykumar</a>
+          <br>
+          <br>
+          <p style="color: #fff; font-family: 'Poppins', sans-serif;"> © 2020 Copyright:
+            <a target="_blank" style="color: #fff; font-family: 'Poppins', sans-serif;" href="http://www.ieeeuvce.in/"> IEEE UVCE</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <style>
+      /* The Modal (background) */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: black;
+      }
+
+      /* Modal Content */
+      .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        width: 90%;
+        max-width: 1000px;
+      }
+
+      /* The Close Button */
+      .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* Hide the slides by default */
+      .mySlides {
+        display: none;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgb(58, 54, 54);
+      }
+
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      img.demo {
+        opacity: 0.6;
+      }
+
+      .active,
+      .demo:hover {
+        opacity: 1;
+      }
+
+      img.hover-shadow {
+        transition: 0.3s;
+      }
+
+      .hover-shadow:hover {
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 15px 25px 0 rgba(0, 0, 0, 0.19);
+        z-index: 1;
+        width: 101%;
+      }
+    </style>
+    <script>
+      // Open the Modal
+      function openModal() {
+        document.getElementById("myModal").style.display = "block";
+      }
+
+      // Close the Modal
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+      }
+    </script>
+    <style>
+      /*Media Queries*/
+      @media (min-width:320px) {
+        .res-game {
+          padding-left: 8vw;
+          padding-right: 8vw;
+        }
+
+        .responsive-md {
+          font-size: 24px;
+        }
+
+        .responsive-lg {
+          font-size: 36px;
+        }
+
+        .responsive-tx {
+          font-size: 16px;
+        }
+
+        .res-pad {
+          padding: 10px;
+        }
+
+        .res-pad-flag {
+          padding: 8px;
+        }
+
+        .res-mar {
+          margin: 8px;
+        }
+
+        /* smartphones, iPhone, portrait 480x320 phones */
+      }
+
+      @media (min-width:481px) {
+        .res-game {
+          padding-left: 10vw;
+          padding-right: 10vw;
+        }
+
+        .responsive-md {
+          font-size: 64px;
+        }
+
+        .responsive-lg {
+          font-size: 88px;
+        }
+
+        .responsive-tx {
+          font-size: 32px;
+        }
+
+        .res-pad {
+          padding: 20px;
+        }
+
+        .res-pad-flag {
+          padding: 24px;
+        }
+
+        .res-mar {
+          margin: 16px;
+        }
+
+        /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+      }
+
+      @media (min-width:641px) {
+        .res-game {
+          padding-left: 10vw;
+          padding-right: 10vw;
+        }
+
+        .responsive-md {
+          font-size: 64px;
+        }
+
+        .responsive-lg {
+          font-size: 88px;
+        }
+
+        .responsive-tx {
+          font-size: 32px;
+        }
+
+        .res-pad {
+          padding: 20px;
+        }
+
+        .res-pad-flag {
+          padding: 24px;
+        }
+
+        .res-mar {
+          margin: 16px;
+        }
+
+        /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+      }
+
+      @media (min-width:961px) {
+        .res-game {
+          padding-left: 10vw;
+          padding-right: 10vw;
+        }
+
+        .responsive-md {
+          font-size: 64px;
+        }
+
+        .responsive-lg {
+          font-size: 88px;
+        }
+
+        .responsive-tx {
+          font-size: 32px;
+        }
+
+        .res-pad {
+          padding: 20px;
+        }
+
+        .res-pad-flag {
+          padding: 24px;
+        }
+
+        .res-mar {
+          margin: 16px;
+        }
+
+        /* tablet, landscape iPad, lo-res laptops ands desktops */
+      }
+
+      @media (min-width:1025px) {
+        .res-game {
+          padding-left: 10vw;
+          padding-right: 10vw;
+        }
+
+        .responsive-md {
+          font-size: 64px;
+        }
+
+        .responsive-lg {
+          font-size: 88px;
+        }
+
+        .responsive-tx {
+          font-size: 32px;
+        }
+
+        .res-pad {
+          padding: 20px;
+        }
+
+        .res-pad-flag {
+          padding: 24px;
+        }
+
+        .res-mar {
+          margin: 16px;
+        }
+
+        /* big landscape tablets, laptops, and desktops */
+      }
+
+      @media (min-width:1281px) {
+        .res-game {
+          padding-left: 10vw;
+          padding-right: 10vw;
+        }
+
+        .responsive-md {
+          font-size: 64px;
+        }
+
+        .responsive-lg {
+          font-size: 88px;
+        }
+
+        .responsive-tx {
+          font-size: 32px;
+        }
+
+        .res-pad {
+          padding: 20px;
+        }
+
+        .res-pad-flag {
+          padding: 24px;
+        }
+
+        .res-mar {
+          margin: 16px;
+        }
+
+        /* hi-res laptops and desktops */
+      }
+    </style>
+  </body>
 
 </html>
