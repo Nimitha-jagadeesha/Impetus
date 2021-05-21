@@ -25,7 +25,14 @@
     * {
       box-sizing: border-box;
     }
-
+    #videobtn {
+    animation: showBlock 0s 2s forwards;
+    visibility: hidden;
+}
+ 
+@keyframes showBlock {
+    to { visibility: visible; }
+}
     @font-face {
       font-family: Montserrat-Thin;
       src: url(Montserrat-Thin.ttf);
@@ -247,7 +254,7 @@
           <p id="demo" class="font-weight-bold mt-4 responsive-tx" style="color:white;"></p>
 
           <!-- <p><a class="play-btn my-5" target="_blank" href="https://www.youtube.com/watch?v=1Eg2gHnAGw8&t=2s"> -->
-          <p><a class="play-btn my-5" target="_blank" href="https://www.youtube.com/watch?v=PyfrvGuB6Ag&ab_channel=IEEEUVCE">
+          <p id="videobtn"><a class="play-btn my-5" target="_blank" href="https://www.youtube.com/watch?v=PyfrvGuB6Ag&ab_channel=IEEEUVCE">
             <!--<button type="button" class="btn btn-dark res-pad res-mar rounded-pill" style="background-color: black;">Impetus 20.0</button></a>-->
           </a></p>
 
