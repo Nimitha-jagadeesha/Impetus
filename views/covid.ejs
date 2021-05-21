@@ -212,7 +212,7 @@
    window.onload = function () {
         document.querySelector(".text").classList.add("spaced");
         document.querySelector(".text2").classList.add("spaced2");
-    
+        document.querySelector('body').classList.add("loaded")
         const steps = document.querySelectorAll(".advice");
         var count = 0;
         setInterval(() => {
@@ -222,11 +222,6 @@
 
     };
     
-</script>
-<script>
-    setTimeout(function() {
-        $('body').addClass('loaded');
-    }, 500);
 </script>
 
 <head>
