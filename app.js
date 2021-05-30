@@ -36,6 +36,7 @@ app.use('/gallery/', (req, res) => res.render('gallery'));
 app.use('/events/', (req, res) => res.render('events'));
 app.use('/covid_awareness/', (req, res) => res.render('covid'));
 app.use('/signin/', (req, res) => res.render('signin'));
+app.use('/retrogaming/', (req, res) => res.render('retrogaming'));
 app.use('/eventbrochure/', (req, res) => res.render('events_Brochure'));
 app.use('/success/', (req, res) => res.render('success'));
 app.get("/admin/impetus21/allmessages/adminpanel", function (req, res) {
