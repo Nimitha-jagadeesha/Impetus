@@ -59,7 +59,7 @@ app.get("/", function (req, res) {
     res.render("home");
 });
 app.all('*', (req, res, next) => {
-    next(new ExpressError('Page Not Found', 404))
+    next(new Error('Page Not Found', 404))
 });
 
 const PORT = process.env.PORT || 3000;
