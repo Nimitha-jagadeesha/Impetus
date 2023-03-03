@@ -3,6 +3,7 @@ const app = express();
 const exressLayouts = require('express-ejs-layouts');
 app.set("view engine", "ejs");
 let alert = require('alert');
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static("public"))
 app.use(express.static("images"))
