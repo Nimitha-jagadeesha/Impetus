@@ -6,6 +6,9 @@
    "engines": {
     "node": "14.x"
   },
+  "pkg": {
+    "assets": ["views/**/*", "public/**/*"]
+  },
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
