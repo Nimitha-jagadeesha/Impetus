@@ -3,7 +3,7 @@ const app = express();
 const exressLayouts = require('express-ejs-layouts');
 app.set("view engine", "ejs");
 let alert = require('alert');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', './views');
 
 app.use(express.static("public"))
 app.use(express.static("images"))
@@ -66,3 +66,4 @@ app.all('*', (req, res, next) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, console.log(`Server started on PORT:` + PORT));
+module.exports.handler = serverless(app);
