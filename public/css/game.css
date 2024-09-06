@@ -1,0 +1,135 @@
+
+
+/* GAME BOARD STYLES */
+#gameC {
+  /*
+	width and height of .gameBoardPixel should 1/40 of the width and height of #gameContainer,
+	because it is used in calculation in the jscript.js file
+	*/
+  /*width: 32vw;
+  height: 32vw;*/
+  width: 28vw;
+  height: 28vw;
+  margin: auto;
+  background-color: #000000;
+  /*border: solid 10px slategrey;
+  border-radius: 10px;*/
+
+  -webkit-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.6);
+}
+
+.gameBoardPixel {
+  /* background-color: slategrey; */
+  /*
+	width and height of .gameBoardPixel should 1/40 of the width and height of #gameContainer,
+	because it is used in calculation in the jscript.js file
+	*/
+  width: 0.7vw;
+  height: 0.7vw;
+  /*width: 0.6vw;
+  height: 0.6vw;*/
+  border-radius: 0px;
+  float: left;
+}
+/* GAME BOARD STYLES END*/
+
+/* SNAKE STYLES */
+.snakeBodyPixel {
+  background-color: #ffffff;
+  box-shadow: 0 0 0px #000000;
+}
+/* SNAKE STYLES END*/
+
+/* FOOD STYLES */
+.food {
+  background-color: #68e768;
+}
+/* FOOD STYLES END*/
+
+/* SCORE STYLES */
+#scoreC {
+  width: 40vw;
+  display: flex;
+  margin: 8px auto;
+  justify-content: space-around;
+}
+
+.scoreBoard {
+  /*border-radius: 10px;
+  border: solid 5px slategrey;*/
+  color: white;
+  background-color: #0c1021;
+  display: inline-block;
+  padding: 1vw;
+  width: 40%;
+
+  -webkit-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.6);
+}
+/* SCORE STYLES END */
+
+/* Hide #onScreenControllers on desktop */
+#onScreenControllers {
+  display: none;
+}
+
+.developerDetails {
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: column;
+  color: #0c1021;
+  font-family: monospace;
+}
+
+.developerDetails a {
+  color: #0c1021;
+}
+
+@media only screen and (max-width: 768px) {
+  /* MOBILE */
+  #gameC {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .gameBoardPixel {
+    width: 2vw;
+    height: 2vw;
+  }
+
+  #scoreC {
+    width: 80vw;
+  }
+
+  #onScreenControllers {
+    width: 80vw;
+    margin: 5vw auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #onScreenControllers > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #onScreenControllers button {
+    background-color: transparent;
+    height: 20vw;
+    width: 20vw;
+    font-size: 10vw;
+    border: none;
+  }
+
+  #onScreenControllers button:focus {
+    outline: none;
+  }
+
+  #onScreenControllers button:active {
+    background-color: slategray;
+  }
+}
